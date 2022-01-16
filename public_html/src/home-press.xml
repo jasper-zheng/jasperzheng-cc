@@ -1,0 +1,39 @@
+<press-list>
+
+  <press title="What Is Memory?"
+         date="Oct, 2020"
+         subtitle="Algorithmic Audiovisual Installation"
+         isVisableInPress="true"
+         layout="vertical"
+         imgSrc="../src/press_img/what_is_memory_press_cover.jpg"
+         link="works/what-is-memory">
+  </press>
+
+  <press title="Seasons Change EP"
+         date="Jan, 2021"
+         subtitle="Music Album"
+         isVisableInPress="true"
+         layout="vertical"
+         imgSrc="../src/press_img/seasons_change_press_cover.jpg"
+         link="music/season-changes-ep">
+  </press>
+
+  <press title="↑↑↑%"
+         date="Dec, 2021"
+         subtitle="Algorithmic Sound Installation"
+         isVisableInPress="true"
+         layout="horizontal"
+         imgSrc="../src/press_img/up_percent_press_cover.jpg"
+         link="works/up-percent">
+  </press>
+
+  <press title="Matches Vol. 01"
+         date="Aug, 2019 - Mar, 2020"
+         subtitle="Music Album"
+         isVisableInPress="true"
+         layout="horizontal"
+         imgSrc="../src/press_img/matches_press_cover.jpg"
+         link="music/dear-reality-ep">
+  </press>
+
+</press-list>

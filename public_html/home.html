@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="icon" type="image/x-icon" href="src/graphics/icon.ico">
+    <link rel="shorcut icon" type="image/x-icon" href="src/graphics/icon.ico">
+    <title>Reality is a lovely place.</title>
+  </head>
+  <body>
+    <div class="loading-mask" style="background-color: white;opacity: 1;position: fixed;width: 100%;height: 100%;z-index: 100;" id="loading-mask">
+      <div class="loader-content" style="font-family:Verdana, Geneva, sans-serif;font-size: 9pt;width: 60pt;height: 60pt;color: black;position: absolute;text-align: center;top: 50%;left: 50%;transform: translate(-50%, -50%);">
+        <div id="loader_hype_container" class="HYPE_document">
+          <script type="text/javascript" charset="utf-8" src="loader.hyperesources/loader_hype_generated_script.js?46326"></script>
+        </div>
+        <div>loading</div>
+      </div>
+    </div>
+  </body>
+
+  <script type="module">
+    import {widthThreshold,version} from './modules/config.js';
+    import {getFileContent,addModule,addCSS} from './modules/utilities.js';
+
+    var width = window.innerWidth;
+    var height = window.innerHeight;
+
+    if (width > widthThreshold) {
+        // Desktop code
+        getFileContent("./src/home_d.html");
+
+        addModule('./modules/landing_page_graphics.js')
+        addModule('./modules/xml_menu.js')
+        addModule('./modules/xml_press.js')
+        addModule('./modules/parallaxScroll.js')
+        addModule('./modules/bio_graphics.js')
+        addModule('./modules/loadingMask.js')
+
+        addCSS('./src/css/home.css')
+        addCSS('./src/css/main.css')
+    } else {
+        // Mobile code
+        getFileContent("./src/home_m.html");
+
+        addModule('./modules/landing_page_graphics.js')
+        addModule('./modules/icon_menu.js')
+
+        addModule('./modules/xml_menu.js')
+        addModule('./modules/xml_press.js')
+        addModule('./modules/bio_graphics.js')
+        addModule('./modules/mobileScrollMenu.js')
+        addModule('./modules/loadingMask.js')
+
+        addCSS('./src/css/home_m.css')
+        addCSS('./src/css/main_m.css')
+        addCSS('./src/css/menu-icon.css')
+    }
+  </script>
+
+  <script type="text/javascript" charset="utf-8" src="indicator.hyperesources/indicator_hype_generated_script.js"></script>
+  <script type="text/javascript" charset="utf-8" src="loader.hyperesources/loader_hype_generated_script.js"></script>
+
+</html>

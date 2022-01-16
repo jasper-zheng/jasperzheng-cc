@@ -1,0 +1,43 @@
+<content>
+  <imgSlide src="03.jpg" layout="horizontal" width="900" height="900"></imgSlide>
+  <imgSlide src="01.gif" layout="landscape" width="528" height="220"></imgSlide>
+  <!-- <imgSlide src="02.gif" layout="landscape"></imgSlide> -->
+  <!-- <imgSlide src="03.jpg" layout="horizontal"></imgSlide> -->
+  <label title="dear reality EP"
+         subTitle="Dance / Electronics"
+         date="Sep, 2019">
+  </label>
+  <link href="https://music.163.com/song?id=1393895473" linkTitle="网易云音乐 >>"></link>
+  <link href="https://soundcloud.com/alaskawintermusic/02-matches-alaska-winter" linkTitle="Soundcloud >>"></link>
+  <text>
+    01 Monochrome Memories 单色记忆
+  </text>
+  <text>
+    02 Matches 火柴 Pt.1
+  </text>
+  <text>
+    03 Leaf Turns Over Unwilling To Fall
+  </text>
+  <text>
+    04 Leaf Turns Over (Alt Version)
+  </text>
+
+
+  <music plt="spotify"
+         src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/832257928&#38;color=%23ff5500&#38;auto_play=false&#38;hide_related=false&#38;show_comments=true&#38;show_user=true&#38;show_reposts=false&#38;show_teaser=true&#38;visual=true"
+         width="380"
+         height="300"
+         frameborder="0"
+         allowtransparency="true"
+         allow="encrypted-media">
+  </music>
+
+  <!-- <iframe src="https://open.spotify.com/embed/track/4NfKpmMgsyxeH3kUWku2nh"
+          width="300"
+          height="380"
+          frameborder="0"
+          allowtransparency="true"
+          allow="encrypted-media">
+        </iframe> -->
+
+</content>

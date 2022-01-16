@@ -1,0 +1,17 @@
+<content>
+  <imgSlide src="01.jpg" layout="horizontal" width="900" height="900"></imgSlide>
+  <imgSlide src="02.jpg" layout="horizontal" width="900" height="900"></imgSlide>
+  <label title="CUBE"
+         subTitle="Audio Composition"
+         dimension="Digital"
+         date="Dec, 2021">-
+  </label>
+  <!-- <link href="#" linkTitle="asvs"></link>
+  <link href="#" linkTitle="asvs"></link> -->
+  <!-- <text>
+    What Is Memory showcased a series of projects utilised machine learning neural network to introduce the fiction of "truly intelligence machine".
+  </text> -->
+
+
+
+</content>

@@ -1,0 +1,16 @@
+<content>
+  <imgSlide src="01.jpg" layout="horizontal" width="1000" height="1000"></imgSlide>
+  <imgSlide src="02.jpg" layout="horizontal" width="1000" height="1000"></imgSlide>
+  <imgSlide src="03.jpg" layout="horizontal" width="1000" height="1000"></imgSlide>
+  <imgSlide src="04.jpg" layout="horizontal" width="1000" height="1000"></imgSlide>
+  <label title="The Landing EP"
+         subTitle="-"
+         dimension="Digital"
+         date="May, 2019">Cinema 4D, Octane Renderer
+  </label>
+  <!-- <link href="#" linkTitle="asvs"></link>
+  <link href="#" linkTitle="asvs"></link> -->
+
+
+
+</content>

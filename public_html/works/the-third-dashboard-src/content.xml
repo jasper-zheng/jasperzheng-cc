@@ -1,0 +1,46 @@
+<content>
+  <imgSlide src="03.jpg" layout="landscape" width="1200" height="675"></imgSlide>
+  <imgSlide src="02.jpg" layout="horizontal" width="1200" height="800"></imgSlide>
+  <imgSlide src="01.jpg" layout="horizontal" width="1200" height="800"></imgSlide>
+  <imgSlide src="05.jpg" layout="horizontal" width="600" height="900"></imgSlide>
+  <imgSlide src="04.jpg" layout="horizontal" width="600" height="900"></imgSlide>
+  <imgSlide src="06.jpg" layout="horizontal" width="600" height="900"></imgSlide>
+  <imgSlide src="07.jpg" layout="horizontal" width="1000" height="667"></imgSlide>
+  <label title="The Third Dashboard"
+         subTitle="Algorithmic Composition"
+         dimension="Dimensions variable"
+         date="Dec, 2019">Digital Prints on Canvas
+  </label>
+  <!-- <link href="#" linkTitle="asvs"></link>
+  <link href="#" linkTitle="asvs"></link> -->
+  <text>
+    Dashboard is an algorithm-based study on the individuals’ perception inside the infrastructure of the contemporary social network.
+  </text>
+  <text>
+    The Arab Spring, the Las Vegas shooting in 2019, the work of Cambridge Analytica, are all indicating the recommendation engine extensively used in the social network is becoming a liability amid the belief that everybody sorts themselves into like-minded communities, hears only like-minded views. It creates an echo chamber of falsehoods that are accepted as truths under their sheer repetition.
+  </text>
+  <text>
+    The exhibition presents a duality of perspectives to demonstrate this phenomenon. By looking into the algorithm behind the infrastructure, Chapter II showcases a landscape view of the societal cohesion. As the view closes up, Chapter I tracks over the recommendation engine on YouTube, trying to render an unexpected scenery that simulates the perceived surroundings inside the social network.
+  </text>
+  <text>
+     -
+  </text>
+  <text>
+    EXPERIMENT I: FAKE PERSONA
+  </text>
+  <text>
+    FAKE PERSONA is a data-reactive experiment that tracks over the recommendation engine on YouTube.
+  </text>
+  <text>
+    A blank Google account was created. A script is imitating user's browsing behaviours, tracking over the recommendation system throughout a topic. After a 15 minutes browsing, a fake persona gradually constructed. Videos with similar opinions reconstruct the dashboard.
+  </text>
+  <text>
+    Thumbnail images were mapped into an environment material. During this process, the structure of the original layout disappeared, shapes and forms were distorted, information was deconstructed into a new organisation.
+  </text>
+  <text>
+    The decisions made by the system creates a unique colouration for each persona, refecting the information they like, leading them astray in an environment.
+  </text>
+
+
+
+</content>

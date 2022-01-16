@@ -1,0 +1,1191 @@
+<html>
+
+<head>
+
+  <meta http-equiv="origin-trial" content="AuDALWifFrZW9RYJbiex5So1NxwUQGHAxOgthPbYuoRrcUXqyKE7xyh0izIGzNWfhNxprqZZ09hoF+4f7RvU7gkAAABmeyJvcmlnaW4iOiJodHRwczovL2FsYXNrYXdpbnRlci5jYzo0NDMiLCJmZWF0dXJlIjoiVW5yZXN0cmljdGVkU2hhcmVkQXJyYXlCdWZmZXIiLCJleHBpcnkiOjE2NTg4Nzk5OTl9">
+  <title>C U B E</title>
+ <!-- This is an HTML comment -->
+ <!-- Below we are grabbing three.js and some helper stuff for using the camera -->
+
+  <!-- <script src = "https://cdnjs.cloudflare.com/ajax/libs/three.js/109/three.min.js"></script> -->
+  <!-- <script src = "orbitControls.js"></script> -->
+  <script src = "https://mimicproject.com/libs/maximilian.v.0.1.js"></script>
+
+	<meta charset="utf-8">
+	<style>
+    a{
+      color: white
+    }
+		body {
+			margin: 0px;
+			background-color: #ccc;
+			overflow: hidden;
+		}
+    #playButton{
+      position: absolute;
+      font-size: 12px;
+      color:white;
+      background-color: rgba(0,0,0,0);
+      border-style: solid;
+      border-color: white;
+      width:140px;
+      height:40px;
+      left: 18%;
+      top: 11%;
+      transform: translate(-50%, 0);
+    }
+    #prompt{
+      font-family: Arial;
+      font-size: 12px;
+      position: absolute;
+      color:white;
+      background-color: rgba(0,0,0,0);\
+      width:140px;
+      height:40px;
+      left: 18%;
+      top: 17%;
+      transform: translate(-50%, 0);
+    }
+    #label{
+      font-family: Arial;
+      font-size: 10px;
+      position: absolute;
+      color:white;
+      background-color: rgba(0,0,0,0);\
+      width:140px;
+      height:40px;
+      left: 18%;
+      top: 87%;
+      transform: translate(-50%, 0);
+    }
+    #playButton:hover{
+      background-color: rgba(255,255,255,0.3);
+    }
+    #top{
+      position: absolute;
+      left: 50%;
+      top: 14%;
+      transform: translate(-50%, -50%);
+    }
+    #top:hover{
+      opacity: 0.6
+    }
+    #right{
+      position: absolute;
+      left: 13%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+    #right:hover{
+      opacity: 0.6
+    }
+    #down{
+      position: absolute;
+      left: 50%;
+      top: 86%;
+      transform: translate(-50%, -50%);
+    }
+    #down:hover{
+      opacity: 0.6
+    }
+    #left{
+      position: absolute;
+      left: 86%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+    #left:hover{
+      opacity: 0.6
+    }
+	</style>
+</head>
+
+<body>
+  <div>
+    <div><button id="playButton">CLICK HERE TO TURN ON SOUND</button></div>
+    <div><div id="prompt">Click or Drag to rotate</div></div>
+    <div><div id="label"><a href="https://git.arts.ac.uk/21009460/msc-coding-1-jasper-zheng/tree/master/project" target="_blank">Unit Coding One Project by Jasper Zheng<br>Github</a></div></div>
+    <div><canvas id="top" width="500" height="100"></canvas></div>
+    <div><canvas id="right" width="100" height="500"></div>
+    <div><canvas id="down" width="500" height="100"></div>
+    <div><canvas id="left" width="100" height="500"></div>
+  </div>
+  <script type="text/javascript">
+    let canvas = document.querySelector("#top");
+    let context = canvas.getContext("2d");
+    function drawTriangle() {
+    context.clearRect(0, 0, canvas.width, canvas.height);
+    context.fillStyle = "rgba(0,0,0,0)";
+    context.fillRect(0, 0, canvas.width, canvas.height);
+    context.beginPath();
+    context.moveTo(180, 50);
+    context.lineTo(320, 50);
+    context.lineTo(250, 28);
+    context.closePath();
+    context.fillStyle = "#ffffff";
+    context.fill();
+    }
+    drawTriangle();
+  </script>
+  <script type="text/javascript">
+    let canvas1 = document.querySelector("#right");
+    let context1 = canvas1.getContext("2d");
+    function drawTriangle() {
+    context1.clearRect(0, 0, canvas1.width, canvas1.height);
+    context1.fillStyle = "rgba(0,0,0,0)";
+    context1.fillRect(0, 0, canvas1.width, canvas1.height);
+    context1.beginPath();
+    context1.moveTo(50, 180);
+    context1.lineTo(50, 320);
+    context1.lineTo(28, 250);
+    context1.closePath();
+    context1.fillStyle = "#ffffff";
+    context1.fill();
+    }
+    drawTriangle();
+  </script>
+  <script type="text/javascript">
+    let canvas2 = document.querySelector("#down");
+    let context2 = canvas2.getContext("2d");
+    function drawTriangle() {
+    context2.clearRect(0, 0, canvas2.width, canvas2.height);
+    context2.fillStyle = "rgba(0,0,0,0)";
+    context2.fillRect(0, 0, canvas2.width, canvas2.height);
+    context2.beginPath();
+    context2.moveTo(180, 50);
+    context2.lineTo(320, 50);
+    context2.lineTo(250, 72);
+    context2.closePath();
+    context2.fillStyle = "#ffffff";
+    context2.fill();
+    }
+    drawTriangle();
+  </script>
+  <script type="text/javascript">
+    let canvas3 = document.querySelector("#left");
+    let context3 = canvas3.getContext("2d");
+    function drawTriangle() {
+    context3.clearRect(0, 0, canvas3.width, canvas3.height);
+    context3.fillStyle = "rgba(0,0,0,0)";
+    context3.fillRect(0, 0, canvas3.width, canvas3.height);
+    context3.beginPath();
+    context3.moveTo(50, 180);
+    context3.lineTo(50, 320);
+    context3.lineTo(72, 250);
+    context3.closePath();
+    context3.fillStyle = "#ffffff";
+    context3.fill();
+    }
+    drawTriangle();
+  </script>
+  <script id = "myAudioScript">
+    // const playButton = document.getElementById('playButton');
+    // var audio = new maxi.maxiAudio();
+    // audio.init();
+    // var mtof = new maxi.convert();
+    var input_1 = new Input('rotate');
+    var input_2 = new Input('rotate2');
+    var input_3 = new Input('chord');
+    var notes_freqs = [[mtof(38),mtof(45),mtof(50),mtof(54),mtof(55),mtof(57),mtof(66)],
+                       [mtof(35),mtof(43),mtof(47),mtof(55),mtof(59),mtof(62),mtof(67)],
+                       [mtof(40),mtof(47),mtof(52),mtof(57),mtof(62),mtof(64),mtof(71)],
+                       [mtof(43),mtof(52),mtof(57),mtof(59),mtof(62),mtof(66),mtof(71)]
+                      ]
+
+    var osc1 = new Maximilian.maxiOsc();
+    var osc2 = new Maximilian.maxiOsc();
+    var osc3 = new Maximilian.maxiOsc();
+    var osc4 = new Maximilian.maxiOsc();
+    var osc5 = new Maximilian.maxiOsc();
+    var osc6 = new Maximilian.maxiOsc();
+    var osc7 = new Maximilian.maxiOsc();
+
+    var osc_bass = new Maximilian.maxiOsc();
+
+    var lfo1 = new Maximilian.maxiOsc();
+    var lfo2 = new Maximilian.maxiOsc();
+    var lfo3 = new Maximilian.maxiOsc();
+    var lfo4 = new Maximilian.maxiOsc();
+    var lfo5 = new Maximilian.maxiOsc();
+    var lfo6 = new Maximilian.maxiOsc();
+    var lfo7 = new Maximilian.maxiOsc();
+
+    var osc_group_1 = [osc1,osc2,osc3,osc4,osc5,osc6,osc7]
+    var lfo_group_1 = [lfo1,lfo2,lfo3,lfo4,lfo5,lfo6,lfo7]
+
+    var lfo_rates = [0.03,
+                     0.05,
+                     0.024,
+                     0.009,
+                     0.011,
+                     0.008,
+                     0.01]
+
+    var filter_lp = new Maximilian.maxiFilter()
+    var filter_lp_2 = new Maximilian.maxiFilter()
+
+    function play(){
+      var input_rotate = input_1.getValue();
+      var input_rotate2 = input_2.getValue();
+      var input_chord_num = input_3.getValue();
+
+      var v = 0
+
+      var cho = 0;
+      var map = (0.8 - input_rotate)
+      var map2 = (0.8 - input_rotate2)
+      for (var i = 0; i < 7; i++){
+        v = (lfo_group_1[i].sinewave(lfo_rates[i] + Math.abs(map) * 1 + 0.15)+1)*0.5
+        cho += osc_group_1[i].saw(notes_freqs[input_chord_num][i] - Math.abs(map) * 100) * v * 0.2
+      }
+
+      var bass = filter_lp_2.lores(osc_bass.saw(30 + map2*15) * map * 0.2,
+                                    1000,
+                                    5)
+      var waves = filter_lp.lores(
+                    cho,
+                    100 + Math.abs(input_rotate) * 500,
+                    7
+                  );
+
+      return waves + bass
+    }
+
+    //audio.play()
+  </script>
+  <script id="vertexShader1" type="x-shader/x-vertex">
+    precision highp float;
+    varying vec3 myNormal;
+
+    vec3 newPosition;
+    uniform highp vec2 mouse;
+    uniform highp float time;
+    varying float displaceZ;
+    #define M_PI 3.14159265358979323846
+
+    float rand2d(vec2 pos) {
+      float d = distance(pos + vec2(cos(time*0.03)*1.6,cos(time*0.03)*1.2), vec2(0.0,0.3));
+      float d2 = distance(pos, vec2(0.0,0.));
+      return sin(d*90.0-cos(d*15. + time*0.9)*1.) *0.4 * (cos(d*15. + time*0.9)+1.)/2. +
+             cos(d2*50.)*0.2+
+             0.5;
+    }
+
+    void main() {
+
+      float angle = 0.8;
+      //rotation
+      mat4 rotateX = mat4(1,0,0,0,
+                          0,cos(angle),sin(angle),0,
+                          0,-sin(angle),cos(angle),0,
+                          0,0,0,1);
+
+      displaceZ = rand2d(position.xy);
+
+      vec3 newPosition = position;
+
+      newPosition.z = newPosition.z + (displaceZ * 0.5) + 0.2;
+
+      vec4 rotatedPos = rotateX * vec4(newPosition,1.0);
+      gl_Position = projectionMatrix * modelViewMatrix * vec4(rotatedPos.xyz,0.5);
+    }
+
+	</script>
+  <script id="vertexShader2" type="x-shader/x-vertex">
+      precision highp float;
+      varying vec3 myNormal;
+
+      vec3 newPosition;
+      uniform highp vec2 mouse;
+      uniform highp float time;
+      varying float displaceZ;
+      #define M_PI 3.14159265358979323846
+
+      float rand2d(vec2 pos) {
+
+          //float d = distance(pos , vec2(0.0,0.3));
+          float d = pos.x + pos.y*1.9 + 1.;
+          float d2 = pos.y + 1.;
+          float c = 0.5;
+          float c2 = 0.5;
+          float h = 0.1;
+
+          c = floor(d/0.02);
+          float mo = mod(c,20.);
+          if (mo==1. ||mo==2.){
+            h = 0.3 + cos(time*1.+2.)*0.1 + 0.2;
+          } else if (mo == 3.||mo==4.){
+            h = 0.7 + sin(time*2.2*(pos.x+1.))*0.1;
+          } else if (mo == 5.||mo==6.){
+            h = 0.8 + sin(time*1.6*(pos.x+1.)+2.1)*0.1;
+          } else if (mo == 7.||mo==8.){
+            h = 0.85 + cos(time*1.*(pos.x+1.))*0.1;
+          } else if (mo == 9.||mo==10.){
+            h = 0.9 + cos(time*1.9*(pos.x+1.))*0.1;
+          } else if (mo == 11.||mo==12.){
+            h = 0.85 + cos(time*1.8+3.2)*0.14;
+          } else if (mo == 13.||mo==14.){
+            h = 0.7 + cos(time*1.2*(pos.x+1.)-0.3)*0.1;
+          } else if (mo == 15.||mo==16.){
+            h = 0.65 + cos(time*1.2+1.8)*0.1;
+          } else if (mo == 17.||mo==18.){
+            h = 0.6 + sin(time*1.*(pos.x+1.)-0.2)*0.1;
+          } else {
+            h = 0.2 + cos(time*0.8)*0.1 + 0.2;
+          }
+
+          c2 = floor(d2/0.02);
+          float mo2 = mod(c2,20.);
+          if (mo2==1. ||mo2==2.){
+            h += 0.4;
+          } else if (mo2 == 3.||mo2==4.){
+            h += 0.7 + sin(time*1.2*(pos.y+1.))*0.1;
+          } else if (mo2 == 5.||mo2==6.){
+            h += 0.8 + sin(time*2.*(pos.y+2.))*0.1;
+          } else if (mo2 == 7.||mo2==8.){
+            h += 0.85 + sin(time*0.3*(pos.y+1.))*0.2;
+          } else if (mo2 == 9.||mo2==10.){
+            h += 0.9 + cos(time*1.5*(pos.y+1.))*0.1;
+          } else if (mo2 == 11.||mo2==12.){
+            h += 0.85 + cos(time*2.2*(pos.y+1.) + 1.0)*0.1;
+          } else if (mo2 == 13.||mo2==14.){
+            h += 0.8 + sin(time*1.9-0.4)*0.15;
+          } else if (mo2 == 15.||mo2==16.){
+            h += 0.7 + cos(time*1.2*(pos.y+1.)-0.9)*0.1;
+          } else if (mo2 == 17.||mo2==18.){
+            h += 0.6 + sin(time*0.7)*0.1;;
+          } else {
+            h += 0.3 + cos(time*1.2-0.2)*0.3+0.6;
+          }
+          return h-0.5;
+      }
+      void main() {
+        float angle = 0.8;
+          //rotation
+        mat4 rotateX = mat4(1,0,0,0,
+                            0,cos(angle),sin(angle),0,
+                            0,-sin(angle),cos(angle),0,
+                            0,0,0,1);
+        // myNormal = normal;
+
+        displaceZ = rand2d(position.xy);
+
+        vec3 newPosition = position;
+
+        newPosition.z = newPosition.z + (displaceZ * 0.4)-0.15;
+
+        vec4 rotatedPos = rotateX * vec4(newPosition,1.0);
+        // myNormal = normalize(newPosition.xyz*1.2);
+        gl_Position = projectionMatrix * modelViewMatrix * vec4(rotatedPos.xyz,0.5);
+      }
+	</script>
+  <script id="fragment_shader1" type="x-shader/x-fragment">
+  		precision highp float;
+      uniform vec2 mouse;
+      uniform float time;
+
+  		varying vec3 myNormal;
+      varying float displaceZ;
+
+  		void main() {
+
+        float n = 0.5-displaceZ*0.5;
+        // float n = displaceZ*0.5;
+  			gl_FragColor = -0.6 +
+              			   vec4(vec3(n*1.6, n*1.9, n*2.4),1.0)*1.0+
+              			   vec4(vec3(0.15),1.);
+  		}
+	</script>
+  <script id="fragment_shader2" type="x-shader/x-fragment">
+  		precision highp float;
+      uniform vec2 mouse;
+      uniform float time;
+
+  		varying vec3 myNormal;
+      varying float displaceZ;
+
+  		void main() {
+
+        float n = 0.62-displaceZ*0.4;
+        // float n = displaceZ*0.5;
+  			gl_FragColor = -0.6 +
+              			   vec4(vec3(n*1.6, n*1.9, n*2.4),1.0)*1.0+
+              			   vec4(vec3(0.15),1.);
+  		}
+	</script>
+  <script id="vertexShader3" type="x-shader/x-vertex">
+      precision highp float;
+      varying vec3 myNormal;
+
+      vec3 newPosition;
+      uniform highp vec2 mouse;
+      uniform highp float time;
+      varying float displaceZ;
+      #define M_PI 3.14159265358979323846
+
+
+      float r(vec2 n)
+      {
+          return fract(cos(dot(n,vec2(36.26,73.12))+time/2000.)*354.63);
+      }
+      float noise(vec2 n)
+      {
+          vec2 fn = floor(n);
+          vec2 sn = smoothstep(vec2(0),vec2(1),fract(n));
+          //vec2 sn = step(vec2(0),fract(n));
+
+          float h1 = mix(r(fn),r(fn+vec2(1,0)),sn.x);
+          float h2 = mix(r(fn+vec2(0,1)),r(fn+vec2(1)),sn.x);
+          return mix(h1,h2,sn.y);
+      }
+      float perlin(vec2 n) {
+          return noise(n*12.)*0.5875;
+      }
+
+      void main() {
+
+          float angle = 0.5;
+          //rotation
+              mat4 rotateX = mat4(1,0,0,0,
+                  0,cos(angle),sin(angle),0,
+                                  0,-sin(angle),cos(angle),0,
+                  0,0,0,1);
+
+              myNormal = normal;
+
+              displaceZ = perlin(position.xy)*2.+0.5;
+
+        vec3 newPosition = position;
+
+          newPosition.z = newPosition.z + (displaceZ * 1.1)+0.6;
+
+          vec4 rotatedPos = rotateX * vec4(newPosition,1.0);
+          myNormal = normalize(newPosition.xyz*1.2);
+        gl_Position = projectionMatrix * modelViewMatrix * vec4(rotatedPos.xyz,0.5);
+      }
+
+  </script>
+  <script id="fragment_shader3" type="x-shader/x-fragment">
+      precision highp float;
+      uniform vec2 mouse;
+      uniform float time;
+      //these values are being passed by the vertex shader
+      varying vec3 myNormal;
+      varying float displaceZ;
+
+      void main() {
+
+        vec3 light = vec3(0.0,0.0,1.0);
+        vec3 invert = vec3(1.,1.,1.);
+        invert=myNormal * invert;
+
+        light = normalize(light);
+        float prod = max(0., dot(myNormal,light));
+        float n = 0.72 - displaceZ*0.4;
+        //vec4 normal = vec4(vec3(prod, prod*1.25, prod*1.5)*0.8, 1.0);
+        gl_FragColor = -0.6 +
+                       vec4(vec3(n*1.6, n*1.9, n*2.4),1.0)*1.0+
+                       vec4(vec3(0.15),1.);
+      }
+
+	</script>
+  <script id="vertexShader4" type="x-shader/x-vertex">
+      precision highp float;
+      varying vec3 myNormal;
+
+      vec3 newPosition;
+      uniform highp float time;
+      varying float displaceZ;
+
+      varying vec3 myPosition;
+      #define M_PI 3.14159265358979323846
+
+      float rand2d(vec2 pos) {
+
+          float d = distance(pos + vec2(sin(time)*0.2,sin(time*1.5)*0.2), vec2(0.0,1.3));
+          return sin(d*10.+time)*0.18+
+                  0.9;
+      }
+
+      void main() {
+
+              myNormal = normal + vec3(0.9,0.9,0.);
+              myPosition = position;
+              displaceZ = rand2d(position.xy);
+
+        vec3 newPosition = position;
+
+          newPosition.z = newPosition.z + (displaceZ * 0.2)-0.0;
+
+          vec4 rotatedPos = vec4(newPosition,1.0);
+        gl_Position = projectionMatrix * modelViewMatrix * vec4(rotatedPos.xyz,0.5);
+      }
+  </script>
+  <script id="fragment_shader4" type="x-shader/x-fragment">
+    precision highp float;
+    uniform float time;
+
+    varying float displaceZ;
+    varying vec3 myPosition;
+
+    float rand(float n){return fract(sin(n) * 43758.5453123);}
+    float rand2d(vec2 n) {
+        return fract(sin(dot(n, vec2(12.9898, 4.1414))) * 43758.5453);
+    }
+    float noise(vec2 n) {
+      const vec2 d = vec2(0.0, 1.0);
+      vec2 b = floor(n), f = smoothstep(vec2(0.0), vec2(1.0), fract(n));
+      return mix(mix(rand2d(b), rand2d(b + d.yx), f.x), mix(rand2d(b + d.xy), rand2d(b + d.yy), f.x), f.y);
+    }
+    float rect(vec2 pos, vec2 size, float color){
+
+        if (abs(myPosition.x-pos.x)<size.x*0.5 && abs(myPosition.y-pos.y)<size.y*0.5){
+          return color;
+        } else {
+
+          return distance(myPosition.xy,pos.xy)*0.06;
+        }
+    }
+
+    void main() {
+
+      float shape =0.;
+
+      for (int i = 0; i<3; i+=1){
+        shape +=  rect(vec2(noise(myPosition.xy*2.0-vec2(float(i))+time*0.1)*2.0-1.0),
+                  vec2(0.03,3.5),
+                  0.1 + sin(time*2.+float(i))*0.1);
+      }
+
+      float n = displaceZ*0.5;
+      gl_FragColor = shape*vec4(1.6,1.85,2.4,1.0) - 0.5 +
+                     vec4(vec3(n*1.6, n*1.85, n*2.4),1.0)*0.2+
+                     vec4(vec3(0.15),1.);
+
+    }
+  </script>
+  <script id="vertexShader5" type="x-shader/x-vertex">
+      precision highp float;
+      varying vec3 myNormal;
+
+      vec3 newPosition;
+      uniform highp vec2 mouse;
+      uniform highp float time;
+      varying float displaceZ;
+      #define M_PI 3.14159265358979323846
+
+      float rand2d(vec2 pos) {
+
+          //float d = distance(pos , vec2(0.0,0.3));
+          float d = pos.x - pos.y*0.3 + 1.;
+          float d2 = pos.y + pos.x * 0.7 + 1.;
+          float c = 0.5;
+          float c2 = 0.5;
+          float h = 0.1;
+
+          c = floor(d/0.02);
+          float mo = mod(c,20.);
+          if (mo==1. ||mo==2.){
+            h = 0.3 + cos(time*1.+2.)*0.1 + 0.2;
+          } else if (mo == 3.||mo==4.){
+            h = 0.7 + sin(time*2.2*(pos.x+1.))*0.1;
+          } else if (mo == 5.||mo==6.){
+            h = 0.75 + sin(time*1.6*(pos.x+1.)+2.1)*0.1;
+          } else if (mo == 7.||mo==8.){
+            h = 0.8 + cos(time*1.*(pos.x+1.))*0.1;
+          } else if (mo == 9.||mo==10.){
+            h = 0.85 + cos(time*1.9*(pos.x+1.))*0.1;
+          } else if (mo == 11.||mo==12.){
+            h = 0.75 + cos(time*1.8+3.2)*0.14;
+          } else if (mo == 13.||mo==14.){
+            h = 0.7 + cos(time*1.2*(pos.x+1.)-0.3)*0.1;
+          } else if (mo == 15.||mo==16.){
+            h = 0.65 + cos(time*1.2+1.8)*0.1;
+          } else if (mo == 17.||mo==18.){
+            h = 0.6 + sin(time*1.*(pos.x+1.)-0.2)*0.1;
+          } else {
+            h = 0.2 + cos(time*0.8)*0.1 + 0.2;
+          }
+
+          c2 = floor(d2/0.02);
+          float mo2 = mod(c2,20.);
+          if (mo2==1. ||mo2==2.){
+            h += 0.4;
+          } else if (mo2 == 3.||mo2==4.){
+            h += 0.7 + sin(time*1.2*(pos.y+1.))*0.1;
+          } else if (mo2 == 5.||mo2==6.){
+            h += 0.72 + sin(time*2.*(pos.y+2.))*0.1;
+          } else if (mo2 == 7.||mo2==8.){
+            h += 0.75 + sin(time*0.3*(pos.y+1.))*0.2;
+          } else if (mo2 == 9.||mo2==10.){
+            h += 0.8 + cos(time*1.5*(pos.y+1.))*0.1;
+          } else if (mo2 == 11.||mo2==12.){
+            h += 0.85 + cos(time*2.2*(pos.y+1.) + 1.0)*0.1;
+          } else if (mo2 == 13.||mo2==14.){
+            h += 0.8 + sin(time*1.9-0.4)*0.15;
+          } else if (mo2 == 15.||mo2==16.){
+            h += 0.7 + cos(time*1.2*(pos.y+1.)-0.9)*0.1;
+          } else if (mo2 == 17.||mo2==18.){
+            h += 0.6 + sin(time*0.7)*0.1;;
+          } else {
+            h += 0.3 + cos(time*1.2-0.2)*0.3+0.6;
+          }
+    return h-0.5;
+      }
+    void main() {
+      float angle = 0.8;
+        //rotation
+      mat4 rotateX = mat4(1,0,0,0,
+                          0,cos(angle),sin(angle),0,
+                          0,-sin(angle),cos(angle),0,
+                          0,0,0,1);
+      // myNormal = normal;
+
+      displaceZ = rand2d(position.xy);
+
+      vec3 newPosition = position;
+
+      newPosition.z = newPosition.z + (displaceZ * 0.4)-0.15;
+
+      vec4 rotatedPos = rotateX * vec4(newPosition,1.0);
+      // myNormal = normalize(newPosition.xyz*1.2);
+      gl_Position = projectionMatrix * modelViewMatrix * vec4(rotatedPos.xyz,0.5);
+    }
+  </script>
+  <script id="fragment_shader5" type="x-shader/x-fragment">
+    precision highp float;
+    uniform vec2 mouse;
+    uniform float time;
+
+    varying vec3 myNormal;
+    varying float displaceZ;
+
+    void main() {
+
+      float n = 0.62-displaceZ*0.4;
+      // float n = displaceZ*0.5;
+      gl_FragColor = -0.6 +
+                     vec4(vec3(n*1.6, n*1.9, n*2.4),1.0)*1.0+
+                     vec4(vec3(0.15),1.);
+    }
+  </script>
+  <script id="vertexShader0" type="x-shader/x-vertex">
+
+  		varying vec2 vUv;
+
+  		void main()
+  		{
+  			vUv = uv;
+  			vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );
+  			gl_Position = projectionMatrix * mvPosition;
+  		}
+
+	</script>
+  <script id="fragment_shader0" type="x-shader/x-fragment">
+
+  		uniform float time;
+
+  		varying vec2 vUv;
+
+  		void main( void ) {
+
+  			vec2 position = - 1.0 + 2.0 * vUv;
+
+  			float red = abs( sin( position.x * position.y + time / 5.0 ) );
+  			float green = abs( sin( position.x * position.y + time / 4.0 ) );
+  			float blue = abs( sin( position.x * position.y + time / 3.0 ) );
+  			gl_FragColor = vec4( red, green, blue, 1.0 );
+
+  		}
+
+	</script>
+	<script type="module">
+    let maxi;
+    initAudioEngine().then((dspEngine)=>{
+      maxi = dspEngine;
+      maxi.hush()
+      maxi.setAudioCode("myAudioScript");
+    })
+    var onMouseMove = (e) => {
+      const x = e.pageX/window.innerWidth;
+      //Send data to audio worklet
+      maxi.send("fromMain", [x*2000]);
+
+    }
+    var rotateSent = setInterval(function(){
+       maxi.send("rotate", [Math.min(Math.abs(Math.abs(cameraPivot.rotation.y%(Math.PI/2)) - Math.PI/4),
+                                     Math.abs(Math.abs(cameraPivot.rotation.x%(Math.PI/2)) - Math.PI/4),
+                                    )]);
+       maxi.send("rotate2", [Math.max(Math.abs(cameraPivot.rotation.y%(Math.PI/2)),
+                                      Math.abs(cameraPivot.rotation.x%(Math.PI/2)),
+                                     )]);
+       // console.log(cameraPivot.rotation.y)
+       var rot_y = Math.floor((cameraPivot.rotation.y + Math.PI/4) / (Math.PI/2))
+       var rot_x = Math.floor((cameraPivot.rotation.x + Math.PI/4) / (Math.PI/2))
+       var chord_num = 0
+       if ((rot_x%2==0)&&(rot_y%4==0)){
+         chord_num=0
+       } else if ((rot_x%2==0)&&(Math.abs(rot_y%4)==1)){
+         chord_num=1
+       } else if ((rot_x%2==0)&&(Math.abs(rot_y%4)==2)){
+         chord_num=0
+       } else if ((rot_x%2==0)&&(Math.abs(rot_y%4)==3)){
+         chord_num=2
+       } else if ((Math.abs(rot_x%2)==1)&&(rot_y%4==0)){
+         chord_num=3
+       } else {
+         chord_num=3
+       }
+       maxi.send("chord",[chord_num])
+       // console.log(chord_num)
+    }, 50);
+    document.addEventListener( 'mousemove', onMouseMove, true )
+
+    const playButton = document.getElementById('playButton');
+    var fade_amount = 0.01
+    var op = 1
+    var fade = setInterval(function(){
+
+        if(op >= 1){
+            fade_amount = -0.04
+        } else if (op <= 0.2){
+            fade_amount = 0.04
+        }
+        op += fade_amount
+        playButton.style.opacity = op
+    }, 20);
+
+    let playAudio = () => {
+        playButton.innerHTML = maxi.play() ? "PAUSE":"START"
+        playButton.style.opacity = 1
+        clearInterval(fade);
+    }
+    playButton.addEventListener("click", () => playAudio());
+
+
+    const top_b = document.getElementById('top');
+    var timesRun = 0
+    let rotate_up_t = () => {
+      controls.setGoingUp()
+    }
+    top_b.addEventListener("click", () => rotate_up_t());
+
+    const left_b = document.getElementById('left');
+    var timesRun = 0
+    let rotate_right_t = () => {
+      controls.setGoingRight()
+    }
+    left_b.addEventListener("click", () => rotate_right_t());
+
+    const right_b = document.getElementById('right');
+    var timesRun = 0
+    let rotate_left_t = () => {
+      controls.setGoingLeft()
+    }
+    right_b.addEventListener("click", () => rotate_left_t());
+
+    const down_b = document.getElementById('down');
+    var timesRun = 0
+    let rotate_down_t = () => {
+      controls.setGoingDown()
+    }
+    down_b.addEventListener("click", () => rotate_down_t());
+
+
+    ///////////////////////
+    import * as THREE from './src/three.module.js';
+    import Stats from './src/stats.module.js';
+    import { OrbitControls } from './src/OrbitControls.js';
+    import { Reflector } from './src/obj/Reflector.js';
+    import { EffectComposer } from './src/post/EffectComposer.js';
+		import { RenderPass } from './src/post/RenderPass.js';
+		import { UnrealBloomPass } from './src/post/UnrealBloomPass.js';
+    // import { GUI } from './src/lil-gui.module.min.js';
+
+    // const gui = new GUI();
+    const post_params = {
+				exposure: 1,
+				bloomStrength: 1,
+				bloomThreshold: 0,
+				bloomRadius: 1
+			};
+    let stats;
+		let composer, mixer, clock;
+    let uniforms1, uniforms2;
+    let cameraPivot;
+
+    let mirrorCube;
+
+    const ball_number = 75
+    const speed = 0.5
+
+  	var scene = new THREE.Scene();
+    {
+      scene.background = new THREE.Color("rgb(10, 10, 10)");
+      // const color = 0x000000;  // white
+      // const density = 0.01;
+      // scene.fog = new THREE.FogExp2(color, density);
+    }
+    stats = new Stats();
+    clock = new THREE.Clock();
+	  var renderer = new THREE.WebGLRenderer( { antialias: true } );
+    renderer.setPixelRatio(window.devicePixelRatio);
+	  renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.toneMapping = THREE.ReinhardToneMapping;
+    var camera = new THREE.PerspectiveCamera(30, window.innerWidth / window.innerHeight, 1, 1000);
+    camera.position.set(0,0,4);
+    // scene.add(camera);
+    cameraPivot = new THREE.Group();
+    scene.add(cameraPivot)
+    cameraPivot.add(camera)
+    // cameraPivot.rotation.y = 0.3
+
+
+    // scene.add( new THREE.AmbientLight( 0x404040 ) );
+
+		// const pointLight = new THREE.PointLight( 0xffffff, 0.5 );
+		// camera.add( pointLight );
+
+    var renderScene = new RenderPass( scene, camera );
+
+		var bloomPass = new UnrealBloomPass( new THREE.Vector2( window.innerWidth, window.innerHeight ), 1.5, 0.4, 0.85 );
+		bloomPass.threshold = post_params.bloomThreshold;
+		bloomPass.strength = post_params.bloomStrength;
+		bloomPass.radius = post_params.bloomRadius;
+
+		composer = new EffectComposer( renderer );
+		composer.addPass( renderScene );
+		composer.addPass( bloomPass );
+    ///////////////////
+
+    uniforms1 = {
+			"time": { value: 1.0 }
+		};
+    const params = [
+			[ 'fragment_shader1', uniforms1, 'vertexShader1' ],
+      [ 'fragment_shader2', uniforms1, 'vertexShader2' ],
+      [ 'fragment_shader3', uniforms1, 'vertexShader3' ],
+      [ 'fragment_shader4', uniforms1, 'vertexShader4' ],
+      [ 'fragment_shader5', uniforms1, 'vertexShader5' ]
+		];
+
+    ///////////////////////
+
+    // const hemiLight = new THREE.HemisphereLight( 0xffffff, 0xffffff, 0.6 );
+		// hemiLight.color.setHSL( 0.6, 1, 0.6 );
+		// hemiLight.groundColor.setHSL( 0.095, 1, 0.75 );
+		// hemiLight.position.set( 0, 10, 0 );
+		// // scene.add( hemiLight );
+    //
+		// const hemiLightHelper = new THREE.HemisphereLightHelper( hemiLight, 5 );
+		// scene.add( hemiLightHelper );
+
+
+
+    // const ambient = new THREE.AmbientLight( 0xffffff, 1 );
+    // scene.add( ambient );
+
+    const dirLight = new THREE.DirectionalLight( 0xffffff, 1 );
+		dirLight.color.setHSL( 0.1, 1, 0.95 );
+		dirLight.position.set( - 1, 1.75, 0.8 );
+		dirLight.position.multiplyScalar( 10 );
+		// scene.add( dirLight );
+
+		// dirLight.castShadow = true;
+    //
+		// dirLight.shadow.mapSize.width = 2048;
+		// dirLight.shadow.mapSize.height = 2048;
+    //
+		// const d = 50;
+    //
+		// dirLight.shadow.camera.left = - d;
+		// dirLight.shadow.camera.right = d;
+		// dirLight.shadow.camera.top = d;
+		// dirLight.shadow.camera.bottom = - d;
+    //
+		// dirLight.shadow.camera.far = 3500;
+		// dirLight.shadow.bias = - 0.0001;
+
+		const dirLightHelper = new THREE.DirectionalLightHelper( dirLight, 5 );
+		scene.add( dirLightHelper );
+
+    const background_geo = new THREE.PlaneGeometry(9, 9);
+    const background_mat = new THREE.MeshBasicMaterial({color: "rgb(30,30,30)"});
+    const background = new THREE.Mesh( background_geo, background_mat );
+    background.position.z = -10
+    cameraPivot.add(background)
+    //var para = 0;
+    var controls = new OrbitControls(cameraPivot, renderer.domElement);
+    //////////////////////////////////////////
+
+    const material = new THREE.LineBasicMaterial({
+    	color: 0xffffff
+    });
+
+    const points = [];
+    points.push( new THREE.Vector3( -2, 0, -2 ) );
+    points.push( new THREE.Vector3( 0, 2, -2 ) );
+    points.push( new THREE.Vector3( 2, 0, -2 ) );
+
+    const geometry = new THREE.BufferGeometry().setFromPoints( points );
+
+    const line = new THREE.Line( geometry, material );
+    scene.add( line );
+
+    // const box_geo = new THREE.BoxGeometry( 0.4, 1, 0.4 );
+    // const cubeRenderTarget = new THREE.WebGLCubeRenderTarget( 128, { format: THREE.RGBFormat, generateMipmaps: true, minFilter: THREE.LinearMipmapLinearFilter } );
+    // var mirrorCubeCamera;
+    // mirrorCubeCamera = new THREE.CubeCamera( 0.1, 5000, cubeRenderTarget);
+    // scene.add( mirrorCubeCamera );
+    // var box_mat = new THREE.MeshBasicMaterial( { envMap: mirrorCubeCamera.renderTarget } );
+
+    const mirrorPlane = new THREE.PlaneBufferGeometry(1, 1)
+    // const mirrorPlane = new THREE.PlaneGeometry(1,1,100,100);
+    var mirror_f = new Reflector( mirrorPlane, {
+			clipBias: 0.003,
+			textureWidth: window.innerWidth * window.devicePixelRatio,
+			textureHeight: window.innerHeight * window.devicePixelRatio,
+			color: 0x889999
+		} );
+
+    var mirror_r = new Reflector( mirrorPlane, {
+			clipBias: 0.003,
+			textureWidth: window.innerWidth * window.devicePixelRatio,
+			textureHeight: window.innerHeight * window.devicePixelRatio,
+			color: 0x889999
+		} );
+    var mirror_l = new Reflector( mirrorPlane, {
+			clipBias: 0.003,
+			textureWidth: window.innerWidth * window.devicePixelRatio,
+			textureHeight: window.innerHeight * window.devicePixelRatio,
+			color: 0x889999
+		} );
+    var mirror_b = new Reflector( mirrorPlane, {
+			clipBias: 0.003,
+			textureWidth: window.innerWidth * window.devicePixelRatio,
+			textureHeight: window.innerHeight * window.devicePixelRatio,
+			color: 0x889999
+		} );
+    var mirror_t = new Reflector( mirrorPlane, {
+			clipBias: 0.003,
+			textureWidth: window.innerWidth * window.devicePixelRatio,
+			textureHeight: window.innerHeight * window.devicePixelRatio,
+			color: 0x889999
+		} );
+    var mirror_bb = new Reflector( mirrorPlane, {
+			clipBias: 0.003,
+			textureWidth: window.innerWidth * window.devicePixelRatio,
+			textureHeight: window.innerHeight * window.devicePixelRatio,
+			color: 0x889999
+		} );
+
+    var mirror_shift = 0.5;
+    mirror_f.position.set(0,0,mirror_shift);
+    mirror_r.position.set(mirror_shift,0,0);
+    mirror_l.position.set(-mirror_shift,0,0);
+    mirror_b.position.set(0,-mirror_shift,0);
+    mirror_t.position.set(0,mirror_shift,0);
+    mirror_bb.position.set(0,0,-mirror_shift);
+
+    mirror_r.rotation.y = Math.PI / 2;
+    mirror_l.rotation.y = - Math.PI / 2;
+    mirror_b.rotation.x = Math.PI / 2;
+    mirror_t.rotation.x = - Math.PI / 2;
+    mirror_bb.rotation.x = Math.PI;
+
+    mirrorCube = new THREE.Group();
+
+    mirrorCube.add( mirror_f );
+    mirrorCube.add( mirror_r );
+    mirrorCube.add( mirror_l );
+    mirrorCube.add( mirror_b );
+    mirrorCube.add( mirror_t );
+    mirrorCube.add( mirror_bb );
+
+    scene.add(mirrorCube)
+    // for (let i = 0; i < params.length; i++){
+    //   const box_mat = new THREE.ShaderMaterial( {
+		// 		uniforms: params[ i ][ 1 ],
+		// 		vertexShader: document.getElementById( 'vertexShader' ).textContent,
+		// 		fragmentShader: document.getElementById( params[ i ][ 0 ] ).textContent,
+    //     side: THREE.BackSide
+		// 	} );
+    //   const box = new THREE.Mesh( box_geo, box_mat );
+    //   scene.add( box );
+    // }
+
+    // const box = new THREE.Mesh( box_geo, box_mat );
+    // mirrorCubeCamera.position.set(box.position.x,box.position.y,box.position.z);
+    // scene.add( box );
+
+    var floorMaterial_1 = new THREE.ShaderMaterial( {
+      uniforms: params[ 0 ][ 1 ],
+      vertexShader: document.getElementById( params[ 0 ][ 2 ] ).textContent,
+      fragmentShader: document.getElementById( params[ 0 ][ 0 ] ).textContent,
+      side: THREE.BackSide
+    } );
+    var floorMaterial_2 = new THREE.ShaderMaterial( {
+      uniforms: params[ 1 ][ 1 ],
+      vertexShader: document.getElementById( params[ 1 ][ 2 ] ).textContent,
+      fragmentShader: document.getElementById( params[ 1 ][ 0 ] ).textContent,
+      side: THREE.BackSide
+    } );
+    var floorMaterial_3 = new THREE.ShaderMaterial( {
+      uniforms: params[ 2 ][ 1 ],
+      vertexShader: document.getElementById( params[ 2 ][ 2 ] ).textContent,
+      fragmentShader: document.getElementById( params[ 2 ][ 0 ] ).textContent,
+      side: THREE.BackSide
+    } );
+    var floorMaterial_4 = new THREE.ShaderMaterial( {
+      uniforms: params[ 3 ][ 1 ],
+      vertexShader: document.getElementById( params[ 3 ][ 2 ] ).textContent,
+      fragmentShader: document.getElementById( params[ 3 ][ 0 ] ).textContent,
+      side: THREE.BackSide
+    } );
+    var floorMaterial_5 = new THREE.ShaderMaterial( {
+      uniforms: params[ 4 ][ 1 ],
+      vertexShader: document.getElementById( params[ 4 ][ 2 ] ).textContent,
+      fragmentShader: document.getElementById( params[ 4 ][ 0 ] ).textContent,
+      side: THREE.BackSide
+    } );
+    var floorGeometry = new THREE.PlaneGeometry(3.6, 3.6, 300, 300);
+
+    var floor_f = new THREE.Mesh(floorGeometry, floorMaterial_1);
+    floor_f.position.set(0,0,1.5);
+    floor_f.rotation.x = 0;
+
+    var floor_r = new THREE.Mesh(floorGeometry, floorMaterial_2);
+    floor_r.position.set(1.5,0,0);
+    floor_r.rotation.y = Math.PI / 2;
+
+    var floor_l = new THREE.Mesh(floorGeometry, floorMaterial_5);
+    floor_l.position.set(-1.5,0,0);
+    floor_l.rotation.y = - Math.PI / 2;
+
+    var floor_b = new THREE.Mesh(new THREE.PlaneGeometry(3.6, 3.6, 120, 120), floorMaterial_4);
+    floor_b.position.set(0,-1.5,0);
+    floor_b.rotation.x = Math.PI / 2;
+
+    var floor_t = new THREE.Mesh(new THREE.PlaneGeometry(3.6, 3.6, 120, 120), floorMaterial_3);
+    floor_t.position.set(0,1.5,0);
+    floor_t.rotation.x = - Math.PI / 2;
+
+    var floor_bb = new THREE.Mesh(floorGeometry, floorMaterial_1);
+    floor_bb.position.set(0,0,-1.5);
+    floor_bb.rotation.x = Math.PI / 2;
+
+
+    scene.add(floor_f);
+    scene.add(floor_r);
+    scene.add(floor_l);
+    scene.add(floor_b);
+    scene.add(floor_t);
+    scene.add(floor_bb);
+    floor_f.visible = false;
+    floor_r.visible = false;
+    floor_l.visible = false;
+    floor_b.visible = false;
+    floor_t.visible = false;
+    floor_bb.visible = false;
+    mirror_f.setReflection(floor_f);
+    mirror_r.setReflection(floor_r);
+    mirror_l.setReflection(floor_l);
+    mirror_b.setReflection(floor_b);
+    mirror_t.setReflection(floor_t);
+    mirror_bb.setReflection(floor_bb);
+    mirror_f.setIgnores(background);
+    mirror_r.setIgnores(background);
+    mirror_l.setIgnores(background);
+    mirror_b.setIgnores(background);
+    mirror_t.setIgnores(background);
+    mirror_bb.setIgnores(background);
+
+
+
+
+    //////////////////////////////////////////
+    // var dragStart = false;
+    // var onDragV = false;
+    // var onDragH = false;
+	  document.body.appendChild(renderer.domElement);
+	  document.addEventListener('mousemove', onDocumentMouseMove, false);
+    document.addEventListener('mousedown', onMouseDown, false);
+    document.addEventListener('mouseup', onMouseUp, false);
+    // document.addEventListener('mousedown', onMouseDown, false);
+    // document.addEventListener( 'mouseup', onMouseUp, false );
+   	var mouse = new THREE.Vector2()
+
+function onDocumentMouseMove(){
+  	event.preventDefault();
+  	if(event.clientX<=window.innerWidth){
+    		mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+      	mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+    }
+}
+var shaking = false;
+var shakeAmount = 0;
+var roatationCopy;
+function onMouseDown(event){
+  // mirrorCube.rotation.x += 0.1
+  // shaking = true
+  shakeAmount = 0
+  // roatationCopy = mirrorCube.rotation
+}
+function onMouseUp(event){
+  // mirrorCube.rotation.x += 0.1
+  //console.log(shakeAmount)
+  shaking = false
+  shakeAmount = 0
+  mirrorCube.rotation.x = 0
+  mirrorCube.rotation.y = 0
+  mirrorCube.rotation.z = 0
+
+}
+
+var r_x=0,r_y=0,r_z=0
+
+function draw() {
+    const delta = clock.getDelta();
+    uniforms1[ "time" ].value += delta * 1;
+    // box_geo.visible = false;
+    // mirrorCubeCamera.updateCubeMap( renderer, scene );
+    // box_geo.visible = true;
+
+//     console.log(balls[0].position.z)
+    // mirror_f.setIgnores();
+    controls.update();
+    //console.log(controls.setPara)
+    if (shaking){
+      if (shakeAmount<0.007){
+        shakeAmount += 0.0003
+      }
+      var s = 0.001 + shakeAmount
+      mirrorCube.rotation.x = r_x + Math.random()*s
+      mirrorCube.rotation.y = r_y + Math.random()*s
+      mirrorCube.rotation.z = r_z + Math.random()*s
+    }
+    // box_geo.visible = falses
+	  renderer.render(scene, camera);
+    // cameraPivot.rotation.y += 0.005;
+    // stats.update();
+    // composer.render();
+	  requestAnimationFrame(draw);
+
+}
+
+// This is the thing that does the resizing
+function onWindowResize() {
+	camera.aspect = window.innerWidth / window.innerHeight;
+	camera.updateProjectionMatrix();
+	renderer.setSize(window.innerWidth, window.innerHeight);
+  composer.setSize(window.innerWidth, window.innerHeight);
+}
+
+// Finally, call the draw loop.
+requestAnimationFrame(draw());
+
+	</script>
+
+</body>
+
+</html>

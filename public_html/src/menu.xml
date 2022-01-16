@@ -1,0 +1,21 @@
+<menu>
+  <categories name="Music" visableNum="2" link="works">
+    <project title="Season Changes 气候变化 EP" isVisableInMenu="true" link="music/season-changes-ep"></project>
+    <project title="Matches Vol.01" isVisableInMenu="false" link="music/matches-vol-01"></project>
+    <project title="dear reality EP" isVisableInMenu="true" link="music/dear-reality-ep"></project>
+    <project title="the sound (soundtrack)" isVisableInMenu="false" link="s.html"></project>
+  </categories>
+
+  <categories name="Works" visableNum="4" link="works">
+    <project title="What Is Memory?" isVisableInMenu="true" link="works/what-is-memory"></project>
+    <project title="↑↑↑%" isVisableInMenu="true" link="works/up-percent"></project>
+    <project title="The Third Dashboard" isVisableInMenu="true" link="works/the-third-dashboard"></project>
+    <project title="Micro Things" isVisableInMenu="true" link="works/micro-things"></project>
+  </categories>
+
+  <categories name="Research" visableNum="1" link="works">
+    <project title="PyAudible" isVisableInMenu="true" link="research/pyaudible"></project>
+
+  </categories>
+
+</menu>
