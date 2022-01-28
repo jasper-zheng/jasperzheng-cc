@@ -303,6 +303,25 @@
   line-height: 3vw;
 }
 
+.portfolio-svg{
+  width: 30vw;
+  position: absolute;
+  top: 50%;
+  left:32%;
+  transform: translate(-50%, -50%);
+
+  transition: 0.3s ease;
+}
+.portfolio-img{
+  width: 34vw;
+  position: absolute;
+  top: 50%;
+  left:66%;
+  transform: translate(-50%, -50%);
+
+  transition: 0.3s ease;
+}
+
 .bio{
   width: 100%;
   /* height: 85vh; */
