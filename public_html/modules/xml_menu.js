@@ -26,8 +26,18 @@ let createMenu = function(xml){
     menuBackground.appendChild(menu)
   } else {
     menu = document.getElementById("desktopMenu");
+    // console.log(test)
   }
-
+  // let skipTitle = menu.hasAttribute("skipTitle")
+  if (!menu.hasAttribute("skipTitle")){
+    var awTitle = document.createElement("h2");
+    var titleA = document.createElement("a");
+    titleA.setAttribute("href",linkPrefix+"home")
+    awTitle.setAttribute("class","awTitle");
+    titleA.innerText = "ALASKA WINTER"
+    awTitle.appendChild(titleA)
+    menu.appendChild(awTitle);
+  }
   let categories = xml.getElementsByTagName('categories');
 
   for (var i = 0; i<categories.length; i++) {

@@ -18,4 +18,11 @@
 
   </categories>
 
+  <!-- <categories name="Python Challenges" visableNum="3" link="works">
+    <project title="#8392842" isVisableInMenu="true" link="python-challenges/001"></project>
+    <project title="#Waves are Images" isVisableInMenu="true" link="python-challenges/8392831"></project>
+    <project title="#Q" isVisableInMenu="true" link="python-challenges/DCT"></project>
+
+  </categories> -->
+
 </menu>

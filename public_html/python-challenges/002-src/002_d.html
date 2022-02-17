@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+
+  </head>
+  <body>
+
+    <table class="landing-table">
+      <tr>
+        <td class="landing-td-l">
+
+        </td>
+        <td class="landing-td-m">
+          <div class="landing-td-m-container">
+            <a class="back" href="../works">
+              <p><< Back</p>
+            </a>
+            <div class="space-m">
+
+            </div>
+            <div id="content"></div>
+
+            <p id="solution-toggle" class="p">
+              <u>Solution</u> ···
+            </p>
+            <div id="solution" class="solution">
+              <div class="space-m"></div>
+              <p>
+                We are using the <a style="display: inline;" href="https://nrich.maths.org/7520" target="_blank"><u>sieve of Eratosthenes</u></a> algorithm to find the largest prime number under 8392842. <br>
+              </p>
+              <p>
+                The sequence of images provides instructions on how to perform the algorithm.
+              </p><br>
+              <p>
+                Following the first image, cross out all the multiples of 2 in the list, except 2.
+              </p><br>
+              <p>
+                Following the second image, cross out all the multiples of 3, except 3.
+              </p><br>
+              <p>
+                Following the third image, cross out all the multiples of 5 (because we don't have 4 already), except 5.
+              </p><br>
+              <p>
+                Following the fourth image, we don't have any multiples of 7. Therefore, the list is "sublime", and all the remainings are prime numbers under 40.
+              </p><br>
+              <p>
+                Therefore, to find the largest prime number under 8392842, we just need to repeat the above steps.
+              </p>
+              <p>
+                 However, this time the list starts from 2, ends at 8392842.
+              </p><br>
+              <p>
+                Here is the code solution:
+              </p>
+              <div class="space-m"></div>
+              <pre>
+def factoriser(n):
+
+    v = [True for i in range(n+1)]
+
+    for i in range(2,n):
+        if v[i]:
+            k = 2
+            while i*k <=n:
+                v[i*k] = 0
+                k+=1
+
+    for i in range(n,2,-1):
+        if v[i]:
+            result = i
+            break
+
+    return result
+
+print(factoriser(8392842)) #8392831
+              </pre>
+
+              <p>
+                The answer is 8392831!
+              </p>
+            </div>
+
+            <div class="space-l"></div>
+            <div class="space-l"></div>
+            <div class="line"></div>
+            <div class="space-l"></div>
+          </div>
+        </td>
+        <td class="landing-td-r">
+          <div class="menu-desktop">
+            <div class="space-m"></div>
+            <div class="space-m"></div>
+            <table id="desktopMenu">
+
+            </table>
+          </div>
+        </td>
+      </tr>
+    </table>
+
+    <img id="cursor" src="../../src/graphics/cursor.svg" alt="cursor"/>
+
+
+  </body>
+</html>

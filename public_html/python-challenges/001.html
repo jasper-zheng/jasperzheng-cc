@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="icon" type="image/x-icon" href="../src/graphics/icon.ico">
+    <link rel="shorcut icon" type="image/x-icon" href="../src/graphics/icon.ico">
+    <title>Images are Waves</title>
+  </head>
+  <body>
+
+  </body>
+
+  <script type="module">
+    import {widthThreshold} from '../modules/config.js';
+    import {getFileContent,addModule,addCSS} from '../modules/utilities.js';
+
+    let fileName = window.location.pathname.split("/").pop().split(".")[0]
+
+    var width = window.innerWidth;
+    var height = window.innerHeight;
+
+    if (width > widthThreshold) {
+        // Desktop code
+        getFileContent("./"+fileName+"-src/"+fileName+"_d.html");
+
+        addModule('../modules/xml_menu.js');
+        addModule('../modules/xml_content.js');
+        addModule('./pc-src/pc.js');
+
+        addCSS('../src/css/home.css')
+        addCSS('../src/css/main.css')
+        addCSS('../src/css/content.css')
+        addCSS('./pc-src/pc-style.css')
+    } else {
+        // Other code
+        getFileContent("./"+fileName+"-src/"+fileName+"_m.html");
+
+        addModule('../modules/icon_menu.js');
+        addModule('../modules/xml_menu.js');
+        addModule('../modules/xml_content.js');
+        addModule('./pc-src/pc.js');
+
+        addCSS('../src/css/home_m.css')
+        addCSS('../src/css/main_m.css')
+        addCSS('../src/css/content_m.css')
+        addCSS('../src/css/menu-icon.css')
+        addCSS('./pc-src/pc-style.css')
+    }
+  </script>
+
+  </script>
+
+</html>

@@ -1,0 +1,24 @@
+<content>
+  <imgSlide src="01.jpg" layout="landscape" width="1400" height="562"></imgSlide>
+  <label title="Python Challenge #Waves are Images"
+         subTitle=" "
+         dimension=" "
+         date=" ">Hint: It's not a square wave, it's a square
+  </label>
+  <!-- <link href="#" linkTitle="asvs"></link>
+  <link href="#" linkTitle="asvs"></link> -->
+  
+
+  <text-a href="./images_are_waves.wav">
+    images_are_waves.wav
+  </text-a>
+
+
+  <!-- <video plt="vimeo"
+         src="https://player.vimeo.com/video/472182682"
+         width="384"
+         height="216"
+         frameborder="0">
+  </video> -->
+
+</content>

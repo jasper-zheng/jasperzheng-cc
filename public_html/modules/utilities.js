@@ -1,4 +1,4 @@
-import {version} from './config.js';
+import {version} from './config.js?v=132';
 
 let getFileContent = function(file) {
   var rawFile = new XMLHttpRequest();

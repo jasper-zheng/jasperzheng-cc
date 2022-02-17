@@ -104,6 +104,17 @@ let createContent = function(xml){
     texts.appendChild(p)
   }
 
+  var textContentsA = xml.getElementsByTagName('text-a')
+  for (var i = 0; i < textContentsA.length; i++){
+    var p = document.createElement("a")
+    p.setAttribute("href",textContentsA[i].getAttribute("href"))
+    p.setAttribute("class","label-link")
+    p.setAttribute("target","_blank")
+    p.setAttribute("style","text-decoration: underline")
+    p.innerHTML = textContentsA[i].childNodes[0].nodeValue
+    texts.appendChild(p)
+  }
+
   var linkedVideos = xml.getElementsByTagName('video')
   for (var i = 0; i < linkedVideos.length; i++){
     var spaceV = document.createElement("div");
@@ -165,6 +176,17 @@ let createContentM = function(xml){
     p.setAttribute("class","p")
     p.setAttribute("style","padding-top: 2.8vw")
     p.innerHTML = textContents[i].childNodes[0].nodeValue
+    texts.appendChild(p)
+  }
+
+  var textContentsA = xml.getElementsByTagName('text-a')
+  for (var i = 0; i < textContentsA.length; i++){
+    var p = document.createElement("a")
+    p.setAttribute("href",textContentsA[i].getAttribute("href"))
+    p.setAttribute("class","label-link")
+    p.setAttribute("target","_blank")
+    p.setAttribute("style","text-decoration: underline")
+    p.innerHTML = textContentsA[i].childNodes[0].nodeValue
     texts.appendChild(p)
   }
 

@@ -1,0 +1,20 @@
+#solution-toggle{
+  padding-top: 5vw;
+  opacity: 1;
+  width: 200px;
+  cursor:pointer;
+}
+/*
+#solution-toggle:hover{
+  cursor:pointer;
+} */
+
+#solution{
+  overflow: hidden;
+  height: 0;
+
+}
+
+.solution{
+  transition: 0.5s;
+}

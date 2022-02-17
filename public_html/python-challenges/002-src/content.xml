@@ -1,0 +1,33 @@
+<content>
+  <imgSlide src="01.jpg" layout="horizontal" width="800" height="716"></imgSlide>
+  <imgSlide src="02.jpg" layout="horizontal" width="800" height="716"></imgSlide>
+  <imgSlide src="03.jpg" layout="horizontal" width="800" height="716"></imgSlide>
+  <imgSlide src="04.jpg" layout="horizontal" width="800" height="716"></imgSlide>
+  <label title="Python Challenge #8392842"
+         subTitle=" "
+         dimension=" "
+         date=" ">Hint: everybody searches for the largest result
+  </label>
+  <!-- <link href="#" linkTitle="asvs"></link>
+  <link href="#" linkTitle="asvs"></link> -->
+  <text>
+    Sift the two's and sift the three's:
+  </text>
+  <text>
+    sieve of Eratosthenes.
+  </text>
+  <text>
+    when the multiples sublime,
+  </text>
+  <text>
+    numbers that remain are prime.
+  </text>
+
+  <!-- <video plt="vimeo"
+         src="https://player.vimeo.com/video/472182682"
+         width="384"
+         height="216"
+         frameborder="0">
+  </video> -->
+
+</content>
