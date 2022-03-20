@@ -8,7 +8,7 @@ let toggleSolution = function(){
     if (width > widthThreshold){
       solution.style.height = '75vw';
     } else {
-      solution.style.height = '240vw';
+      solution.style.height = '280vw';
     }
     isSolutionOpen = 1;
   } else {
