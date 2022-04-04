@@ -29,7 +29,7 @@ let createMenu = function(xml){
     // console.log(test)
   }
   // let skipTitle = menu.hasAttribute("skipTitle")
-  if (!menu.hasAttribute("skipTitle")){
+  if (!menu.hasAttribute("skipTitle") && width>widthThreshold){
     var awTitle = document.createElement("h2");
     var titleA = document.createElement("a");
     titleA.setAttribute("href",linkPrefix+"home")

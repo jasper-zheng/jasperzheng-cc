@@ -1,6 +1,14 @@
 <content>
   <press-list>
-
+    <press title="Manipulated Network: Sketchbook"
+           date="Mar, 2022"
+           subtitle="Algorithmic Digital Prints"
+           isVisableInPress="true"
+           layout="vertical"
+           imgSrc="../src/press_img/manipulated_network_sketchbook_press_cover.jpg"
+           link="works/manipulated-network-sketchbook">
+    </press>
+    
     <press title="What Is Memory?"
            date="Oct, 2020"
            subtitle="Algorithmic Audiovisual Installation"

@@ -394,16 +394,8 @@ function showThumbs(imgSlide) {
     if (i==slideIndex){
       thumb.className += " active";
     }
-
-    // var imgFile=new Image();
-    // imgFile.src=pathPrefix + imgSlide[i].getAttribute("src");
-    // console.log(imgFile)
-
-
     img.setAttribute("src",pathPrefix + imgSlide[i].getAttribute("src"));
     img.setAttribute("class","thumb-img");
-    // img.setAttribute("width","60px");
-    // console.log(img.naturalHeight + " " + img.naturalWidth)
     img.index = i
 
     if (width > widthThreshold){
@@ -421,7 +413,6 @@ function showThumbs(imgSlide) {
     // console.log(img.naturalHeight + " " + img.naturalWidth)
   }
   content.appendChild(thumbsContainer)
-
 }
 
 var mouseX, mouseY
