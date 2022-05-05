@@ -6,8 +6,8 @@
   <imgSlide src="05.jpg" layout="horizontal" width="956" height="675"></imgSlide>
   <imgSlide src="06.jpg" layout="landscape" width="1200" height="427"></imgSlide>
   <imgSlide src="07.jpg" layout="horizontal" width="956" height="675"></imgSlide>
-  <label title="Manipulated Network: Sketchbook"
-         subTitle="Algorithmic Digital Prints"
+  <label title="Manipulated Network"
+         subTitle="Algorithmic Digital Images"
          dimension="29.7 x 21 cm / 1024 x 1024"
          date="Mar, 2022">Paper, GAN generated imagery.
   </label>

@@ -7,7 +7,7 @@
   </categories>
 
   <categories name="Works" visableNum="4" link="works">
-    <project title="Manipulated Network: Sketchbook" isVisableInMenu="true" link="works/manipulated-network-sketchbook"></project>
+    <project title="Manipulated Network" isVisableInMenu="true" link="works/manipulated-network-sketchbook"></project>
     <project title="What Is Memory?" isVisableInMenu="true" link="works/what-is-memory"></project>
     <project title="↑↑↑%" isVisableInMenu="true" link="works/up-percent"></project>
     <project title="The Third Dashboard" isVisableInMenu="true" link="works/the-third-dashboard"></project>
