@@ -16,6 +16,7 @@
 
   <categories name="Research" visableNum="1" link="works">
     <project title="PyAudible" isVisableInMenu="true" link="research/pyaudible"></project>
+    <project title="pix2StyleGAN3" isVisableInMenu="true" link="research/p2s3"></project>
 
   </categories>
 

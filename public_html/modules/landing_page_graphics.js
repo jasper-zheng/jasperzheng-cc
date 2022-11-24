@@ -4,8 +4,8 @@ import {widthThreshold} from './config.js';
  *
  */
 var canvas = document.getElementById('landing-graphics')
-// var canvas = document.querySelector("canvas");
-// canvas.style.background = "rgba(251,251,251,1)";
+var indicator = document.getElementById('loaderCircle')
+
 var mouseX = 1;
 var mouseY = 1;
 var canvas_w = canvas.offsetWidth;
@@ -55,9 +55,25 @@ scene.add(mesh);
 onWindowResize();
 window.addEventListener('resize', onWindowResize, false);
 
+function lerp(min, max, fraction) {
+  return (max-min)*fraction+min;
+}
+
+var cy = 40
+var op = 1
+
 function draw() {
-  uniforms.time.value += 0.01;
+  op = lerp(op, 0.05, 0.03)
+  cy = lerp(cy, 13, 0.04)
+  if (cy<=15){
+    cy = 40
+    op = 1
+  }
+  indicator.setAttribute('cy', cy + '%')
+  indicator.setAttribute('opacity', op)
+  uniforms.time.value += 0.012;
   renderer.render(scene, camera);
+
   requestAnimationFrame(draw);
 }
 

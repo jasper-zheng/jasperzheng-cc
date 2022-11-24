@@ -2,6 +2,6 @@
 let linkPrefix = "https://alaskawinter.cc/";
 let widthThreshold = 800
 
-let version = '170'
+let version = '210'
 
 export {linkPrefix,widthThreshold,version}

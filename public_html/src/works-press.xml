@@ -9,6 +9,15 @@
            link="works/manipulated-network-sketchbook">
     </press>
 
+    <press title="↑↑↑%"
+           date="Dec, 2021"
+           subtitle="Algorithmic Sound Installation"
+           isVisableInPress="true"
+           layout="horizontal"
+           imgSrc="../src/press_img/up_percent_press_cover.jpg"
+           link="works/up-percent">
+    </press>
+
     <press title="What Is Memory?"
            date="Oct, 2020"
            subtitle="Algorithmic Audiovisual Installation"
@@ -18,14 +27,7 @@
            link="works/what-is-memory">
     </press>
 
-    <press title="↑↑↑%"
-           date="Dec, 2021"
-           subtitle="Algorithmic Sound Installation"
-           isVisableInPress="true"
-           layout="horizontal"
-           imgSrc="../src/press_img/up_percent_press_cover.jpg"
-           link="works/up-percent">
-    </press>
+
 
     <press title="The Third Dashboard"
            date="Dec, 2019"
@@ -47,9 +49,43 @@
 
   </press-list>
 
+
+
   <press-list>
 
+    <press title="pix2StyleGAN3"
+           date="Oct, 2022"
+           subtitle="Generative Deep Neural Network"
+           isVisableInPress="true"
+           layout="vertical"
+           imgSrc="../src/press_img/p2s3_press_cover.jpg"
+           link="research/p2s3">
+    </press>
 
+    <press title="Feature Rewriting"
+           date="May, 2022"
+           subtitle="Generative Deep Neural Network"
+           isVisableInPress="true"
+           layout="vertical"
+           imgSrc="../src/press_img/rewriting_press_cover.jpg"
+           link="research/rewriting">
+    </press>
+
+
+    <press title="PyAudible"
+           date="May, 2021"
+           subtitle="Data-over-sound Library"
+           isVisableInPress="true"
+           layout="vertical"
+           imgSrc="../src/press_img/pyaudible_press_cover.jpg"
+           link="research/pyaudible">
+    </press>
+
+
+  </press-list>
+
+
+  <press-list>
 
     <press title="Seasons Change EP"
            date="Jan, 2021"
@@ -71,24 +107,8 @@
 
   </press-list>
 
-  <press-list>
-
-
-
-    <press title="PyAudible"
-           date="May, 2021"
-           subtitle="Python Library"
-           isVisableInPress="true"
-           layout="vertical"
-           imgSrc="../src/press_img/pyaudible_press_cover.jpg"
-           link="research/pyaudible">
-    </press>
-
-  </press-list>
 
   <press-list>
-
-
 
     <press title="The Landing EP"
            date="May, 2019"

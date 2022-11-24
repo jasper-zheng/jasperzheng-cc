@@ -16,7 +16,7 @@ let getXMLFile = function(path, callback) {
 
 let createPress = function(xml){
   let pressBlock = xml.getElementsByTagName('press-list');
-  
+
   for (var j = 0; j< pressBlock.length; j++){
     let presses = pressBlock[j].getElementsByTagName('press')
 
@@ -62,6 +62,7 @@ let createPress = function(xml){
           }
         } else {
             var cell = document.createElement("td")
+            cell.setAttribute("class", "pressContainer")
             row.appendChild(cell)
         }
       }

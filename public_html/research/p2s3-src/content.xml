@@ -1,0 +1,17 @@
+<content>
+  <imgSlide src="01.jpg" layout="landscape" width="1000" height="512"></imgSlide>
+  <imgSlide src="02.jpg" layout="landscape" width="1000" height="512"></imgSlide>
+  <imgSlide src="03.jpg" layout="horizontal" width="671" height="900"></imgSlide>
+  <imgSlide src="04.jpg" layout="landscape" width="1000" height="512"></imgSlide>
+  <label title="pixel2StyleGAN3"
+         subTitle="Generative Deep Neural Network"
+         dimension="PyTorch, CUDA toolkit"
+         date="Oct, 2022">Expandable StyleGAN3 Canvas for Image-to-image Translation and Expressive Feature Exploration
+  </label>
+  <link href="https://github.com/jasper-zheng/pix2styleGAN3/blob/main/msc_thesis_jasper.pdf" linkTitle="Paper"></link>
+  <link href="https://github.com/jasper-zheng/pix2styleGAN3" linkTitle="Codes"></link>
+  <text>
+    We present a new framework for real-time feature exploration and manipulation using style-based image-conditional generative adversarial networks. Our framework follows previously introduced StyleGAN3 architecture, extends it for image-to-image translation tasks by appending a feature extraction encoder that creates low-level skip connections to the generator. We first demonstrate that our framework solves a variety of image-to-image translation tasks while maintaining the image quality and the internal behaviour of StyleGAN3. Our approach also induces an extendable canvas that can be trained on a lower resolution and later expanded to a larger resolution. Next, implement our framework on network bending, and build a graphic interface for real-time interaction with the model's internal features. Finally, we conduct qualitative human opinion studies to evaluate its usability in the creative context, and demonstrate its potential to broaden the possibility for expressive outcomes to emerge.
+  </text>
+
+</content>
