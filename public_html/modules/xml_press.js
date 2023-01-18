@@ -39,7 +39,7 @@ let createPress = function(xml){
             cell.setAttribute("class", "pressContainer")
             var coverImg = document.createElement("img");
             coverImg.setAttribute("class", "pressCoverImg");
-            coverImg.setAttribute("src", presses[i].getAttribute("imgSrc"));
+            coverImg.setAttribute("src", presses[i].getAttribute("imgSrc")+'?v='+version);
             coverImg.onmouseover = mouseOver;
             coverImg.onmouseout = mouseOut;
             var title = document.createElement("div");
@@ -108,7 +108,7 @@ let createPressM = function(xml){
 
           var coverImg = document.createElement("img");
           coverImg.setAttribute("class", "pressCoverImg");
-          coverImg.setAttribute("src", presses[i].getAttribute("imgSrc"));
+          coverImg.setAttribute("src", presses[i].getAttribute("imgSrc")+'?v='+version);
           coverImg.onmouseover = mouseOver;
           coverImg.onmouseout = mouseOut;
           var title = document.createElement("div");

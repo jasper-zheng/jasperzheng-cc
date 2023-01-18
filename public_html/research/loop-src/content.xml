@@ -1,0 +1,15 @@
+<content>
+  <imgSlide src="01.jpg" layout="landscape" width="1000" height="512"></imgSlide>
+  <imgSlide src="02.jpg" layout="horizontal" width="1000" height="682"></imgSlide>
+  <label title="LOOP"
+         subTitle="iOS Development"
+         dimension="Swift, AVFAudio -> Audio Engine API"
+         date="May, 2020">A Loop-based Music Studio Application for iOS - Undergraduate Group Project
+  </label>
+  <!-- <link href="https://github.com/jasper-zheng/pix2styleGAN3/blob/main/msc_thesis_jasper.pdf" linkTitle="Paper"></link>
+  <link href="https://github.com/jasper-zheng/pix2styleGAN3" linkTitle="Codes"></link> -->
+  <text>
+
+  </text>
+
+</content>

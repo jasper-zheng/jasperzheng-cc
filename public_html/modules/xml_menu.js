@@ -3,6 +3,9 @@ import {linkPrefix,widthThreshold,version} from './config.js';
 var menu;
 var aboutLink = linkPrefix+"home"
 var insLink = 'https://www.instagram.com/alaskawinter_x/'
+var linkedinLink = 'https://www.linkedin.com/in/jasper-zheng/'
+var cvLink = 'https://alaskawinter.cc/CV_2023.01.pdf'
+
 
 let getXMLFile = function(path, callback) {
   let request = new XMLHttpRequest();
@@ -86,8 +89,21 @@ let createMenu = function(xml){
   ins.innerText = 'Instagram'
   about.innerText = 'About'
 
+  var cv = document.createElement('a')
+  cv.setAttribute('href',cvLink)
+  cv.setAttribute('class','menu-about-link')
+  cv.setAttribute('target','_blank')
+  cv.innerText = 'cv'
+  var linkedin = document.createElement('a')
+  linkedin.setAttribute('href',linkedinLink)
+  linkedin.setAttribute('class','menu-about-link')
+  linkedin.setAttribute('target','_blank')
+  linkedin.innerText = 'LinkedIn'
+
   menuAbouts.appendChild(about)
   menuAbouts.appendChild(ins)
+  menuAbouts.appendChild(linkedin)
+  menuAbouts.appendChild(cv)
 
   if (width<widthThreshold){
     menuBackground.appendChild(menuAbouts)

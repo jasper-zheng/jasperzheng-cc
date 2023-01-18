@@ -144,7 +144,7 @@
   position: absolute;
   width: 75%;
   left: 50%;
-  top: 10%;
+  top: 9%;
 
   transform: translate(-50%,0);
   text-align:center;
@@ -154,13 +154,13 @@
   /* height: 10vw; */
 }
 .menuHead {
-  padding-top: 10vw;
-  padding-bottom: 2vw;
+  padding-top: 8vw;
+  padding-bottom: 1.2vw;
 }
 .menu-abouts{
   text-align: center;
   position: absolute;
-  bottom: 10vh;
+  bottom: 12vh;
   font-size: 2.8vw;
   font-family: Verdana, Geneva, sans-serif;
   font-style: normal;

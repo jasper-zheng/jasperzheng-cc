@@ -282,7 +282,7 @@ let createSlide = function(imgSlide) {
   slidesContainer.setAttribute("class","slides-container");
   slideNum = imgSlide.length;
   for (var i = 0; i < slideNum; i++){
-    let imgPath = pathPrefix + imgSlide[i].getAttribute("src");
+    let imgPath = pathPrefix + imgSlide[i].getAttribute("src")+'?v='+version;
     var slideContainer = document.createElement("div");
     var slideImg = document.createElement("img");
 

@@ -1,8 +1,8 @@
 <press-list>
 
-  <press title="pix2StyleGAN3"
+  <press title="StyleGAN-Canvas"
          date="Oct, 2022"
-         subtitle="Generative Deep Neural Network"
+         subtitle="Real-time Generative AI Framework"
          isVisableInPress="true"
          layout="vertical"
          imgSrc="../src/press_img/p2s3_press_cover.jpg"

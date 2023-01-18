@@ -53,9 +53,9 @@
 
   <press-list>
 
-    <press title="pix2StyleGAN3"
+    <press title="StyleGAN-Canvas"
            date="Oct, 2022"
-           subtitle="Generative Deep Neural Network"
+           subtitle="Real-time Generative AI Framework"
            isVisableInPress="true"
            layout="vertical"
            imgSrc="../src/press_img/p2s3_press_cover.jpg"
@@ -79,6 +79,15 @@
            layout="vertical"
            imgSrc="../src/press_img/pyaudible_press_cover.jpg"
            link="research/pyaudible">
+    </press>
+
+    <press title="LOOP"
+           date="May, 2020"
+           subtitle="Music Studio Application for iOS"
+           isVisableInPress="true"
+           layout="vertical"
+           imgSrc="../src/press_img/loop_press_cover.jpg"
+           link="research/loop">
     </press>
 
 

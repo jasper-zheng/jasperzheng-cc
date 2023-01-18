@@ -11,12 +11,13 @@
     <project title="What Is Memory?" isVisableInMenu="true" link="works/what-is-memory"></project>
     <project title="↑↑↑%" isVisableInMenu="true" link="works/up-percent"></project>
     <project title="The Third Dashboard" isVisableInMenu="true" link="works/the-third-dashboard"></project>
-    <project title="Micro Things" isVisableInMenu="true" link="works/micro-things"></project>
+    <project title="Micro Things" isVisableInMenu="false" link="works/micro-things"></project>
   </categories>
 
   <categories name="Research" visableNum="1" link="works">
+    <project title="StyleGAN-Canvas" isVisableInMenu="true" link="research/p2s3"></project>
     <project title="PyAudible" isVisableInMenu="true" link="research/pyaudible"></project>
-    <project title="pix2StyleGAN3" isVisableInMenu="true" link="research/p2s3"></project>
+
 
   </categories>
 
