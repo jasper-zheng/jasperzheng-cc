@@ -1,0 +1,80 @@
+{% load static %}
+
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">	
+	<link rel="stylesheet" href="{% static 'css/main.css' %}" type="text/css">
+	<link rel="stylesheet" href="{% static 'css/animation.css' %}" type="text/css">
+	<link rel="stylesheet" href="{% static 'css/show-work.css' %}" type="text/css">
+	<link rel="icon" type="image/x-icon" href="{{ icon.icon.url }}">
+	<link rel="shorcut icon" type="image/x-icon" href="{{ icon.icon.url }}">
+	<title>↑↑%</title>
+</head>
+<body>
+
+{% include 'header.html' %}
+
+<div class="content-body" id="showWorkBody">
+	<div>
+		<div class="slides-container" id="slides-container">
+		{% for img in work.images.all %}
+			<div class="slide">
+				<img src="{{ img.image.url }}" class="slide-img" alt="">
+			</div>
+		{% endfor %}
+		</div>
+		<div class="thumbs-container">
+			{% for img in work.images.all %}
+			<div class="thumb">
+				<img src="{{ img.image.url }}" class="thumb-img" alt="">
+			</div>
+		{% endfor %}
+
+		</div>
+	</div>
+	<div class="work-title block-cursor">
+		<h2>{{ work.title }}</h2><br>
+	</div>
+	<div class="" id="work-block-transition">
+		<div class="flex-container-work">
+			<div class="work-info">
+				<h5 class="block-cursor">Type</h5>
+				<p class="info-p">{{ work.sub_title }}</p>
+				<h5 class="block-cursor">Materials</h5>
+				<p class="info-p">{{ work.materials }}</p>
+
+				{% if work.display_location %}
+					<h5 class="block-cursor">Display</h5>
+					<p class="info-p">{{ work.display_location }}</p>
+				{% endif %}
+
+				{% for url in work.urls.all %}
+					<p><a href="{{ url.link }}" class="actived-underline" target="_blank">{{ url.html_display_name }}</a></p>
+				{% endfor %}
+
+				{% if work.urls.all %}
+				<br>
+				{% endif %}		
+				<br>
+				<p class="info-p">{{ work.date|date:"M, Y" }}</p>
+				
+
+			</div>
+			<div class="work-content">
+				<p>{{ work.texts | safe}}</p>
+
+			</div>
+			
+
+		</div>
+	</div>
+
+
+</div>
+
+{% include 'footer.html' %}
+<script type="module" charset="utf-8" src="{% static 'js/utilities.js' %}"></script>
+<script type="module" charset="utf-8" src="{% static 'js/image-slide.js' %}"></script>
+</body>
+</html>

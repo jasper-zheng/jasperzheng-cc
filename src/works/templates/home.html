@@ -1,0 +1,154 @@
+{% load static %}
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="{% static 'css/main.css' %}" type="text/css">
+		<link rel="stylesheet" href="{% static 'css/animation.css' %}" type="text/css">
+		<link rel="icon" type="image/x-icon" href="{{ icon.icon.url }}">
+    	<link rel="shorcut icon" type="image/x-icon" href="{{ icon.icon.url }}">
+		<title>↑↑%</title>
+	</head>
+	<body>
+		{% include 'header.html' %}
+	<div class="content-body">
+
+		<!-- <p>under maintenance, will be back in May.  - J</p> -->
+		<div class="landing-container">
+			<div id='landing-graphics-container'><div id="landing-graphics"></div></div>
+			
+			<div class="landing-title-box"><h1 id="landing-title">Reality is a lovely place, but I wouldn’t want to live there.</h1></div>
+			<div class="landing-text">
+				<h4>Researcher in Explainable / Creative AI and Music Technology, Computational Creativity.</h4>
+				<h4 style="padding-top:10px">> London, UK - <span id="time">00:19:10 GMT+1</span></h4>
+			</div>
+			
+			
+
+
+		</div>
+		<div class="block-transition boldColumn" id='selectWorkBlock' >
+			<div class="block-title-box" style="height: 50%; " id="selectWorkTitle">
+				<h3 class="actived-underline-close block-cursor">Selected Works</h3>
+				<div style="width:25px;height:30px;float:left;"></div> 
+				<div class="arrow-box" id="selectWorkArrow" style="float:left">
+					<div class="arrow" style="float:left"></div>
+				</div>
+				
+			</div>
+			<div class="flex-container text-down" id="selectWorkText" style="">
+				<div class="block-transition-text block-cursor" id="research-area" >
+					<h4>My work explores AI systems through their convergence with the practices of media and arts. </h4>
+				</div>
+				<a href="{% url 'works' %}" style="align-self:flex-end">
+				<div class="block-transition-text" id="fullPortfolio" >
+					<h4 style="float: right" class="underline-mobile">Full Portfolio (2019-2023)</h4>
+					<div style="width:25px;height:1px;float:right;"></div> 
+					<div class="arrow-box-s" id="portfolioArrow"><div class="arrow-s"></div></div>
+				</div>
+				</a>
+			</div>
+			
+
+
+		</div>
+
+		<div class="work-container">
+ 		
+	 		{% for work in work_list %}
+	 		<div class='work-block'>
+	 			<a href="{% url 'show-work' work.work_id %}">
+	 				<img class="work-feature-img" src="{{ work.front_image.url }}" alt="">
+		 		</a>
+				<div class='work-block-content'>
+					<a href="{% url 'show-work' work.work_id %}">
+						<h2 class="work-block-title">
+			 				{{ work.title }}
+			 				<div class="arrow-box work-block-arrow" style="float:right">
+			 					<div class="arrow" style="float:right"></div>
+			 				</div>
+			 			</h2>
+		 			</a>
+		 			<p id='workSummary'style="max-width: 600px">{{ work.summary }}</p>
+		 			<p>
+						<span class="work-block-label"><span class="label-bold">Category </span>
+							<a class="underline" href="/works/?filter={% if work.work_type == 1 %}research{% elif work.work_type == 2 %}artwork{% elif work.work_type == 3 %}music{% else %}unclassified{% endif %} ">
+							{% if work.work_type == 1 %}Research{% elif work.work_type == 2 %}Artwork{% elif work.work_type == 3 %}Music{% else %}Unclassified{% endif %}</a>
+						</span>
+						<span class="work-block-label"><span class="label-bold">Subject </span>{{ work.subject }}</span>
+						<span class="work-block-label"><span class="label-bold">Date </span>{{ work.date|date:"M, Y" }} </span>
+					</p>
+				</div>
+				
+				
+			</div>
+			{% endfor %}
+
+	 	</div>
+
+	 	<div class="block-transition" id='fullPortfolioTransition'>
+	 		<a href="{% url 'works' %}">
+				<div class="block-title-box" style="height: 40%;" id="fullPortfolio2">
+					<h3 class="actived-underline-close">Full Portfolio (2019-2023)</h3>
+					<div style="width:25px;height:30px;float:left;"></div> 
+					<div class="arrow-box" id="portfolioArrow2" >
+						<div class="arrow" style="float:left"></div>
+					</div>
+				</div>
+			</a>
+			<div class="links-container">
+				<div class="links-box" style="width:300px">
+					<a href="{{ portfolio_link.google_scholar }}" class='links-item' target='_blank'><h4>GOOGLE SCHOLAR</h4></a>
+					<a href="{{ portfolio_link.github }}" class='links-item' target='_blank'><h4>GITHUB</h4></a>
+					<a href="{{ portfolio_link.orcid }}" class='links-item' target='_blank'><h4>ORCID</h4></a>
+				</div>
+				<div class="links-box links-slash"></div>
+				<div class="links-box" style="width:300px">
+					<div style="width:15px;height:2px"></div>
+					<a href="{{ portfolio_link.soundcloud }}" class='links-item' target='_blank'><h4>SOUNDCLOUD</h4></a>
+					<a href="{{ portfolio_link.spotify }}" class='links-item' target='_blank'><h4>SPOTIFY</h4></a>
+					<a href="{{ portfolio_link.netease }}" class='links-item' target='_blank'><h4>网易云</h4></a>
+				</div>
+
+			</div>
+			<div id='bio-graphics'></div>
+
+		</div>
+
+		<table class="block-transition" >
+			<tr class="flex-container">
+				<td id="about" style="flex: 63%;">
+					<div class='block-title-box block-cursor'><h3>About</h3></div>
+					<div class="block-transition-text" style="padding-top: 220px; max-width:550px; ">
+						<p>{{ bio_text.date|date:"M, Y" }}</p>
+						<h4>{{ bio_text.texts | safe  }}</h4>
+					</div>
+				</td>
+				<td style="flex: 37%;">
+					<div id="contact" style="height: 280px">
+						<div class='block-title-box block-cursor'><h3>Contact</h3></div>
+						<div id="contact-items" >
+							{% for contact in contact_link %}
+								<a href="{% if contact.link_type == 1 %}mailto:{{ contact.email }}{% else %}{{ contact.link }}{% endif %}" target='_blank' class="underline">{{contact.title}}</a><br>
+							{% endfor %}
+						</div>
+
+					</div>
+					<div class="space" id = 'contactSpace'></div>
+				</td>
+			</tr>
+		</table>
+
+	</div>
+	{% include 'footer.html' %}
+	</body>
+
+	<script type="module" charset="utf-8" src="{% static 'js/landing-page-graphics.js' %}"></script>
+	<script type="module" charset="utf-8" src="{% static 'js/bio-graphics.js' %}"></script>
+	<script type="module" charset="utf-8" src="{% static 'js/landing-animations.js' %}"></script>
+	<script type="module" charset="utf-8" src="{% static 'js/utilities.js' %}"></script>
+	<!-- <script type="module" charset="utf-8" src="{% static 'js/scroll.js' %}"></script> -->
+</html>
+
+

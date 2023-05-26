@@ -1,0 +1,39 @@
+<div class="header-container" >
+	<a href="{% url 'index' %}"><span class="header-bold {% if cur_header == 0 %}actived-underline-bold{% else %}underline-bold{% endif %}">Jasper Zheng (Shuoyang)</span></a>
+	<div class="header-right-box">
+		<div class="item-button">
+			<a href="{% url 'works' %}" class='header-right-item'><span class="{% if cur_header == 1 %}actived-underline{% else %}underline{% endif %}">Works</span></a>
+			<div class="drop-down">
+				<a href="/works/?filter=research"><span class="underline">Research</span></a>
+				<a href="/works/?filter=artwork"><span class="underline">Artwork</span></a>
+				<a href="/works/?filter=music"><span class="underline">Music</span></a>
+			</div>
+		</div>
+		<div class="item-button">
+			<a href="{% url 'index' %}#about" class='header-right-item'><span class="{% if cur_header == 2 %}actived-underline{% else %}underline{% endif %}">About</span></a>
+		</div>
+		<div class="item-button">
+			<a href="{{ cv.cv_file.url }}" class='header-right-item' target="_blank"><span class="{% if cur_header == 3 %}actived-underline{% else %}underline{% endif %}">CV</span></a>
+		</div>
+	</div>
+
+
+
+	<div class="menu-icon-container" id="menu-icon">
+      <div class="menu-icon" id="menu-ico-content"><div class="bar1"></div><div class="bar2"></div><div class="bar3"></div></div>
+    </div>
+    <div id="mobileMenu" class="menu-background">
+    	<div class="mobile-header-box">
+			<a href="{% url 'works' %}" class='mobile-header-item first-item'><div class="{% if cur_header == 1 %}actived-underline{% else %}underline{% endif %}">Works</div></a>
+			<div class="sub-item-box">
+				<a href="/works/?filter=research" class='mobile-header-item sub-item'><div class="underline">Research</div></a>
+				<a href="/works/?filter=artwork" class='mobile-header-item sub-item'><div class="underline">Artwork</div></a>
+				<a href="/works/?filter=music" class='mobile-header-item sub-item'><div class="underline">Music</div></a>
+			</div>
+			<a href="#" class='mobile-header-item first-item'><div class="{% if cur_header == 2 %}actived-underline{% else %}underline{% endif %}">About</div></a>
+			<a href="{{ cv.cv_file.url }}" class='mobile-header-item first-item' target="_blank"><div class="{% if cur_header == 3 %}actived-underline{% else %}underline{% endif %}">CV</div></a>
+		</div>
+
+    </div>
+</div>
+<br/><br/>
