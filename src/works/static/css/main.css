@@ -1,11 +1,11 @@
 :root {
 /*  --rootSize: 1rem;*/
-  --paddingX: 42px;
+  --paddingX: 36px;
 }
 
 body {
   margin: 0px;
-  padding-left: var(--paddingX);
+  padding-left: 36px;
   padding-right: var(--paddingX);
   background-color: rgba(245, 245, 245, 1);
   color: rgba(20, 20, 20, 1);
@@ -20,13 +20,13 @@ h2 {
   color: rgba(20, 20, 20, 1);
   font-family: "HelveticaNeue", "Helvetica Neue";
   font-weight: normal;
-  font-size: calc(2rem + 1vw);
+  font-size: calc(1rem + 1vw);
   margin: 0;
   padding-bottom: 5px;
 }
 h3 {
   float:left;
-  font-size: 2rem;
+  font-size: 1.5rem;
   display:inline-block;
   margin: 0;
 }
@@ -60,7 +60,7 @@ a {
 }
 
 p{
-  letter-spacing:0.05rem;
+  letter-spacing:0.01rem;
   font-size: 0.9rem;
   line-height: 1.45rem;
 }
@@ -119,30 +119,65 @@ p{
   padding-top: 64px;
 }
 
-
-.landing-container{
-  height: 80vh;
-  padding-left: var(--paddingX);
-  cursor: s-resize;
+/* Two-panel layout */
+.page-layout{
+  display: flex;
+  min-height: 100vh;
 }
+.left-panel{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 32%;
+  height: 100vh;
+  padding-top: 130px;
+  padding-left: var(--paddingX);
+  padding-right: 0px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow: hidden;
+  z-index: 5;
+  /* border-right: 2px solid; */
+}
+.left-panel-container{
+  position: relative;
+  width: 62%;
+  height: 100%;
+  
+}
+.right-panel{
+  margin-left: 28%;
+  width: 72%;
+  box-sizing: border-box;
+  border-left: 2px solid;
+  z-index: 5;
+  background-color: rgba(245, 245, 245, 1);
+}
+
 .landing-title-box{
   z-index: 5;
-  width: calc(250px + 35vw);
-  height: 290px;
-  padding-top: calc(25px + 10vh);
+  width: 100%;
+  height: 10px;
+  padding-top: calc(25px + 1vh);
   padding-bottom: 2px;
 }
 .landing-text{
-  width: calc(160px + 28vw);;
+  width: 100%;
 }
 #landing-title{
 }
 
-#landing-graphics{
+#landing-graphics-container{
   position: absolute;
-  top: 50vh;
-  left: 64vw;
-  transform: translate(-50%, -50%);
+  width: 79%;
+  height: 1000px;
+  overflow: hidden;
+}
+#landing-graphics{
+  position: relative;
+  width: 100%;
   z-index: -2;
 }
 
@@ -168,7 +203,7 @@ p{
 }
 .block-transition-text{
 /*  position: absolute;*/
-  padding-left: var(--paddingX);
+  padding-left: 22px;
   padding-top: 60px;
 /*  height: 30%;*/
 }
@@ -176,36 +211,50 @@ p{
   position: absolute;
 }
 .block-title-box{
-  position: absolute;
+  position: relative;
   padding-top: 12px;
 /*  width: 45%;*/
 }
+.abs{
+  position: absolute;
+}
 
+.title-text{
+  margin-left: 22px;
+}
+.article-container{
+  padding-left: 24px;
+  padding-top: 20px;
+}
+.article-item{
+  font-size: 0.8rem;
+  line-height: 0.9rem;
+  margin-block-end: 0.6em;
+  margin-block-start: 0.6em;
+}
 
-
-
+.work-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(370px, 1fr));
+  gap: 0;
+}
 .work-block{
-  padding-top: 50px;
-  padding-bottom: 60px;
-  padding-left: var(--paddingX);
-  padding-right: var(--paddingX);
+  padding: 24px 20px 32px 20px;
   border-top: 2px solid;
-
   display: flex;
-  flex-wrap: wrap;
-  align-content: flex-start;
-  flex-direction: row;
+  flex-direction: column;
   position: relative;
 }
 #workSummary{
   padding-bottom: 0;
 }
 .work-block-content{
-  width: calc(80vw - 320px)
+  width: 100%;
 }
 .work-feature-img{
-  width: calc(80px + 18vw);
-  padding-right: 40px;
+  width: 100%;
+  padding-right: 0;
+  padding-bottom: 16px;
 }
 .work-block-title{
 /*  pointer-events: none;*/
@@ -214,14 +263,23 @@ p{
   text-decoration: solid underline rgba(20, 20, 20, 1) 3px;
 }
 .work-block-label{
-  padding-right: 20px;
+  padding-right: 15px;
 }
 .label-bold{
-  padding-right: 5px;
+  padding-right: 4px;
   font-family: "HelveticaNeueBold", "HelveticaNeue-Bold", "Helvetica Neue Bold";
 }
-
-.links-container{
+.left-panel-links{
+  /* display: block; */
+  position: absolute;
+  width: 100%;
+  bottom: 9vh;
+  /* flex-wrap: wrap; */
+  /* align-content: flex-start; */
+  padding-top: 24px;
+  /* gap: 4px; */
+}
+/* .links-container{
   position: absolute;
   bottom: 27px;
   left: var(--paddingX);
@@ -229,7 +287,7 @@ p{
   display: flex;
   flex-wrap: wrap;
   align-content: flex-start;
-}
+} */
 .links-slash{
   width: 10px;
   height: 80px;
@@ -249,9 +307,9 @@ p{
   align-content: flex-start;
 }
 .links-item{
-  border: solid rgba(20, 20, 20, 1) 2px;
-  border-radius: 50px;
-  padding: 4px 16px;
+  /* border: solid rgba(20, 20, 20, 1) 2px; */
+  /* border-radius: 50px; */
+  /* padding: 4px 16px; */
   margin: 5px 4px;
   transition: 0.25s;
 }
@@ -264,8 +322,11 @@ p{
 #bio-graphics{
   position: absolute;
   right: var(--paddingX);
-  width: 900px;
+  width: 65%;
   z-index: -3;
+}
+.bio-text-s{
+  font-size: 1.0rem;
 }
 
 .flex-container {
@@ -278,21 +339,33 @@ p{
 #about{
   padding: 0 0 65px 0; 
 }
+#about-section{
+  /* padding: 20px 20px 65px 20px; */
+  /* height: 700px; */
+}
+#contact-section{
+  /* padding: 20px 20px 65px 20px; */
+  height: 180px;
+}
+/* #contact-section .block-transition{
+  border-top: none;
+} */
 #contact{
-  padding-left: 32px;
-  border-left: 8px solid;
-  border-top: 2px solid;
-  margin-bottom: -2px;
-  transform: translateY(-2px);
+  padding-left: 0;
+  border-left: none;
+  border-top: none;
+  margin-bottom: 0;
+  transform: none;
 }
 #contact-items{
-  text-align: right;
-  position:absolute;
-  bottom: 28px;
-  right: var(--paddingX);
+  text-align: left;
+  position: absolute;
+  top: 70px;
+  bottom: auto;
+  right: auto;
   font-size: 2rem;
   font-weight: lighter;
-  line-height: 2.7rem;
+  /* line-height: 2.7rem; */
 }
 #contactSpace{
   height: calc(100% - 280px); 
@@ -313,8 +386,8 @@ p{
   width: 540px;
 }
 #selectWorkText{
-  width: 86%; 
-  bottom: 34px;
+  width: 66%; 
+  bottom: 16px;
 }
 .footer-container{
   font-size: 1.4rem;
@@ -325,10 +398,11 @@ p{
   cursor: default;
 }
 #selectWorkBlock{
-  height: 270px;
+  height: 240px;
 }
 #fullPortfolioTransition{
-  height: 298px;
+  height: 60px;
+  
 }
 
 
@@ -436,8 +510,9 @@ p{
 /*  text-decoration: none;*/
 }
 #pagesBlock{
-  height: 300px;
+  height: 150px;
   padding-top: 10px;
+  padding-left: 14px;
 }
 .pages{
   font-size: 2rem;
@@ -445,7 +520,9 @@ p{
   margin-right: 0.8rem;
 }
 
-
+.foot-pad{
+  padding-left: 21px; padding-right: 21px;
+}
 
 
 @media only screen and (max-width: 1078px) {
@@ -486,12 +563,26 @@ h2 {
   display: none;
 }
 
-.landing-container{
-  padding-left: 0;
-  height: 77vh;
-
+/* Revert to stacked layout on mobile */
+.page-layout{
+  flex-direction: column;
 }
-
+.left-panel{
+  position: relative;
+  width: 100%;
+  height: 77vh;
+  padding-top: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+.right-panel{
+  margin-left: 0;
+  width: 100%;
+  border-left: 0px;
+}
+.left-panel-container{
+  width: 75%;
+}
 .landing-title-box{
   display: none;
 }
@@ -502,17 +593,19 @@ h2 {
   height: 90vh;
   top: 0;
   left: 0;
-  overflow: hidden;
+  overflow: visible;
 }
 #landing-graphics{
   width: 90vw;
   height: 60vh;
   position: absolute;
-  top: 44vh;
-  left: 0vw;
+  top: 31vh;
+  left: 9vw;
   transform: translate(-50%, -50%);
   z-index: -2;
-/*  overflow: hidden;*/
+}
+.title-text{
+  margin-left: 0px;
 }
 .block-transition-text{
   padding-left: 0;
@@ -533,6 +626,9 @@ h2 {
   right: 0;
   background-color: rgba(20, 20, 20, 1);
 }
+.work-container{
+  grid-template-columns: 1fr;
+}
 .work-feature-img{
   width: 100%;
   padding-right: 0px;
@@ -546,16 +642,10 @@ h2 {
   display: none;
 }
 .work-block{
-  padding-top: 32px;
-  padding-bottom: 56px;
-  padding-left: 0;
-  padding-right: 0;
+  padding: 24px 0 32px 0;
   border-top: 2px solid;
-
   display: flex;
-  flex-wrap: wrap;
-  align-content: flex-start;
-  flex-direction: row;
+  flex-direction: column;
   position: relative;
 }
 #workSummary{
@@ -586,22 +676,43 @@ h2 {
 #portfolioArrow2{
   position: absolute;
   right: 0;
-  top: 3.2rem;
+  /* top: 3.2rem; */
 }
 .links-box{
   padding-bottom: 15px;
+}
+/* .left-panel-links{
+  display: none;
+} */
+
+#about-section{
+  padding: 20px 0 40px 0;
+}
+#contact-section{
+  padding: 20px 0 40px 0;
 }
 .footer-container{
   height:15vh; 
 }
 #filterBlock{
   width:100%;
-  height:50vh;
+  height:auto;
   margin-top: 120px; 
-  padding-top:10px
+  padding-top:10px;
+  padding-bottom: 35px;
+  display: inline-block
 }
 .filter{
   padding: 0 1rem 0 0;
+}
+
+.foot-pad{
+  padding-left: 0; padding-right: 0;
+}
+
+.article-container{
+  padding-left: 0;
+  padding-top: 20px;
 }
 
 }

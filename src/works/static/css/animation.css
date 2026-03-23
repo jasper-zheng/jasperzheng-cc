@@ -122,8 +122,12 @@
   padding: 9px;
   transition: transform 0.25s ease-out;
 }
+
+#selectWorkArrow{
+  transform: translateX(-10px) translateY(2px);
+}
 #selectWorkTitle:hover #selectWorkArrow{
-  transform: translateY(10px);
+  transform: translateX(0px) translateY(2px);
 }
 /*.arrow-box:hover{
   transform: rotate(-90deg);
@@ -179,6 +183,7 @@
   transform: rotate(45deg);
   transform-origin: bottom right;
 }
+
 #fullPortfolio:hover #portfolioArrow{
   transform: translateX(10px);
 }
@@ -187,24 +192,25 @@
   transform-origin: bottom left;
 }
 #portfolioArrow2{
-  transform: rotate(-90deg);
+  /* transform: rotate(-90deg); */
+  transform: translateX(-10px) translateY(3px);
 }
 #fullPortfolio2:hover #portfolioArrow2{
-  transform: rotate(-90deg) translateY(15px);
+  transform: translateX(0px) translateY(3px);
 }
 
 .work-block-arrow{
   padding: 0px;
 /*  visibility: hidden; */
   opacity: 0;
-  transform: rotate(-90deg) translateY(20px);
+  transform: rotate(-90deg) translateY(0px);
   transition: 0.25s;
 }
 
 .work-block-title:hover .work-block-arrow{
 /*  visibility: visible;*/
   opacity: 1;
-  transform: rotate(-90deg) translateY(30px);
+  transform: rotate(-90deg) translateY(10px);
 }
 
 

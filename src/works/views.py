@@ -1,15 +1,15 @@
 from django.shortcuts import render
 from django.core.paginator import Paginator
 
-from .models import Work, PortfolioLink, Bio, ContactLink, CV, Icon
+from .models import Work, PortfolioLink, Bio, ContactLink, CV, Icon, Article
 
 query_set = {'research': 1, 'artwork': 2, 'music': 3}
-work_per_page = 2
+work_per_page = 6
 
 # Create your views here.
 
 def index(request):
-    work_list = Work.objects.filter(display_in_press=True)
+    work_list = Work.objects.filter(display_in_press=True).order_by('-date')
     portfolio_link = PortfolioLink.objects.all()
     portfolio_link = portfolio_link[len(portfolio_link)-1] if len(portfolio_link)>=1 else None
     bio_text = Bio.objects.all()
@@ -22,6 +22,7 @@ def index(request):
     cv_link = cv_link[0] if len(cv_link)>=1 else None
     icon_link = Icon.objects.all().order_by('-date')
     icon_link = icon_link[0] if len(icon_link)>=1 else None
+    article_list = Article.objects.filter(display_in_press=True).order_by('-date')
     return render(request, 'home.html', {
     	'cur_header': 0,
         'work_list': work_list,
@@ -29,7 +30,8 @@ def index(request):
         'bio_text': bio_text,
         'contact_link': contact_link,
         'cv': cv_link,
-        'icon': icon_link
+        'icon': icon_link,
+        'article_list': article_list,
         })
 
 def works(request):

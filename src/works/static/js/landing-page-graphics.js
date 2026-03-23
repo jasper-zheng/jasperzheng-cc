@@ -58,7 +58,7 @@ var curPos = {};
 curPos.x = 0;
 curPos.y = 0;
 
-var dt = 0.005
+var lastTime = null;
 
 var desPos = {};
 desPos.x = 0;
@@ -71,12 +71,16 @@ onWindowResize();
 window.addEventListener('resize', onWindowResize, false);
 window.addEventListener('mousemove', onMouseMove, false);
 
-function draw() {
-  updateDesPos()
+function draw(now) {
+  if (lastTime === null) lastTime = now;
+  var deltaTime = Math.min((now - lastTime) / 1000, 0.1);
+  lastTime = now;
+
+  updateDesPos(deltaTime)
   uniforms.mouse.value.x = desPos.x
   uniforms.mouse.value.y = desPos.y
 
-  uniforms.time.value += 0.012;
+  uniforms.time.value += 0.72 * deltaTime;
   renderer.render(scene, camera);
 
   requestAnimationFrame(draw);
@@ -86,18 +90,22 @@ function draw() {
 requestAnimationFrame(draw);
 
 function onWindowResize(event) {
+  var container = document.getElementById('landing-graphics-container');
+  var containerWidth = container ? container.offsetWidth : 400;
 
   if(window.innerWidth>766){
-    canvas_off_w = 1350*0.5
-    canvas_off_h = 1350*0.5*0.9
+    canvas_off_w = Math.min(containerWidth, 675);
+    canvas_off_h = canvas_off_w * 1.3;
   	renderer.setSize(canvas_off_w, canvas_off_h);
   	uniforms.resolution.value.x = renderer.domElement.width;
   	uniforms.resolution.value.y = renderer.domElement.height;
     canvas_pos_x = canvas.getBoundingClientRect().right - canvas_off_w/2*0.7
     canvas_pos_y = canvas.getBoundingClientRect().bottom - canvas_off_h/2*0.7
   } else {
-    canvas_off_w = 1350*0.5
-    canvas_off_h = 1350*0.5*0.9
+    // canvas_off_w = 1250*0.5
+    // canvas_off_h = 1250*0.5*0.9
+    canvas_off_w = containerWidth * 1.65;
+    canvas_off_h = canvas_off_w * 0.9;
     renderer.setSize(canvas_off_w, canvas_off_h);
   	uniforms.resolution.value.x = renderer.domElement.width;
   	uniforms.resolution.value.y = renderer.domElement.height;
@@ -115,8 +123,9 @@ function onMouseMove(e){
   // console.log(curPos)
 }
 
-function updateDesPos(){
-  desPos.x += (curPos.x - desPos.x) * dt
-  desPos.y += (curPos.y - desPos.y) * dt
+function updateDesPos(deltaTime){
+  var smoothing = 1 - Math.pow(1 - 0.005 * 60, deltaTime * 60)
+  desPos.x += (curPos.x - desPos.x) * deltaTime * 0.05
+  desPos.y += (curPos.y - desPos.y) * deltaTime * 0.05
 }
 

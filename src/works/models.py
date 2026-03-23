@@ -92,3 +92,12 @@ class Icon(models.Model):
 		return f"icon_{self.date.strftime('%Y_%m_%d')}"
 
 
+class Article(models.Model):
+	bibliography = models.TextField('Bibliography')
+	date = models.DateField('Article Date')
+	display_in_press = models.BooleanField('Display in Home.html?', default=False)
+
+	def __str__(self):
+		return f"article_{self.date.strftime('%Y_%m_%d')}"
+
+

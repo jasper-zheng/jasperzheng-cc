@@ -121,7 +121,7 @@ venv.bak/
 
 # mkdocs documentation
 # /site
-
+migrations
 # mypy
 .mypy_cache/
 .dmypy.json
@@ -131,3 +131,5 @@ dmypy.json
 .pyre/
 .DS_Store
 site
+
+settings.py

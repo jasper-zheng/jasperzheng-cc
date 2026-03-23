@@ -59,13 +59,14 @@
 		{% endfor %}
 
 
+
+
+ 	</div>
 		<div class="block-transition" id='pagesBlock'>
 		{% for i in num_page %}
 			<a href="?{% if filter_key != 'None' %}filter={{filter_key}}&{%endif%}page={{ i }}"><span class="pages underline"><span class="{% if i == cur_page %}page-active{% endif %}">{{ i }}</span></span></a>
 		{% endfor %}
 		</div>
-
- 	</div>
 	
 </div>
 	{% include 'footer.html' %}
