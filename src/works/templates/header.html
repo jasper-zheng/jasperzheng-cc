@@ -10,7 +10,7 @@
 			</div>
 		</div>
 		<div class="item-button">
-			<a href="{% url 'index' %}#about" class='header-right-item'><span class="{% if cur_header == 2 %}actived-underline{% else %}underline{% endif %}">About</span></a>
+			<a href="{% url 'index' %}#about-section" class='header-right-item'><span class="{% if cur_header == 2 %}actived-underline{% else %}underline{% endif %}">About</span></a>
 		</div>
 		<div class="item-button">
 			<a href="{{ cv.cv_file.url }}" class='header-right-item' target="_blank"><span class="{% if cur_header == 3 %}actived-underline{% else %}underline{% endif %}">CV</span></a>
@@ -30,7 +30,7 @@
 				<a href="/works/?filter=artwork" class='mobile-header-item sub-item'><div class="underline">Artwork</div></a>
 				<a href="/works/?filter=music" class='mobile-header-item sub-item'><div class="underline">Music</div></a>
 			</div>
-			<a href="#" class='mobile-header-item first-item'><div class="{% if cur_header == 2 %}actived-underline{% else %}underline{% endif %}">About</div></a>
+			<a href="{% url 'index' %}#about-section" class='mobile-header-item first-item'><div class="{% if cur_header == 2 %}actived-underline{% else %}underline{% endif %}">About</div></a>
 			<a href="{{ cv.cv_file.url }}" class='mobile-header-item first-item' target="_blank"><div class="{% if cur_header == 3 %}actived-underline{% else %}underline{% endif %}">CV</div></a>
 		</div>
 
